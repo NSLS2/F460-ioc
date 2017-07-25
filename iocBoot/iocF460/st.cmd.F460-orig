@@ -1,0 +1,82 @@
+#!./bin/linux-x86_64/F460
+
+< iocBoot/iocF460/envPaths
+
+cd ${TOP}
+
+## Register all support components
+dbLoadDatabase("dbd/F460.dbd",0,0)
+F460_registerRecordDeviceDriver(pdbbase)
+
+## User defined ENV variables
+epicsEnvSet(HOSTNAME,"F460IOC")
+# **NOTE**: Name lengths matter. len(P) + len(PORT) <= 23
+# --> TODO: fix up some of the longer ones (INP/OUT) to increase this limit
+epicsEnvSet("P", "E1:F460:")
+epicsEnvSet("PORT", "E1")
+
+# the following is done due to a limitation of 
+# the autosave status PV name (max. length=9)
+epicsEnvSet(AS_PV_PREFIX,"AS_F460_1:")
+epicsEnvSet(AS_PATH,"/opt/epics/iocoutput/autosave")
+epicsEnvSet(AS_DB_PATH,"/usr/lib/epics/")
+
+drvAsynIPPortConfigure("$(PORT)", "192.168.0.200:4002")
+
+#drvAsynSerialPortConfigure("$(PORT)", "/dev/ttyS0")
+#asynOctetSetInputEos("$(PORT)",0,"\r\n")
+#asynOctetSetOutputEos("$(PORT)",0,"\r\n")
+#asynSetOption("$(PORT)", 0, "baud", "115200")
+#asynSetOption("$(PORT)", 0, "bits", "8")
+#asynSetOption("$(PORT)", 0, "parity", "none")
+#asynSetOption("$(PORT)", 0, "stop", "1")
+#asynSetOption("$(PORT)", 0, "clocal", "Y")
+#asynSetOption("$(PORT)", 0, "crtscts", "N")
+#asynSetTraceMask("$(PORT)",0,"0x9")
+#asynSetTraceIOMask("$(PORT)",0,"0x2")
+
+## configuration for stream
+epicsEnvSet ("STREAM_PROTOCOL_PATH", "/opt/epics/modules/F460/F460App/src")
+
+## Load records
+dbLoadRecords("/opt/epics/modules/F460/db/F460.db", "P=$(P),PORT=$(PORT),PINI=YES,BUFSZ=12,PREC=9")
+dbLoadRecords("/opt/epics/modules/F460/db/asyn.db", "P=$(P),PORT=$(PORT),ADDR=0")
+
+## generic scan
+#dbLoadTemplate("/opt/epics/modules/F460/db/F460_save_restoreStatus.substitutions")
+#dbLoadTemplate("/opt/epics/modules/F460/db/F460_generic_scan.substitutions")
+#dbLoadTemplate("/opt/epics/modules/F460/db/F460_GSCAN_Saver.substitutions")
+
+# µIOCSystem Overwiew
+#dbLoadTemplate("/opt/epics/modules/F460/db/F460_IOCsystem.substitutions")
+
+# save_restore setup
+< ${TOP}/iocBoot/${IOC}/save_restore.cmd
+
+## Set this to see messages from mySub
+#var mySubDebug 1
+
+#var streamDebug 1
+
+cd ${TOP}/iocBoot/${IOC}
+iocInit()
+
+dbl ("*") > /opt/epics/iocoutput/dbl/PVList.${HOSTNAME}
+
+## scan configuration
+#saveData_Version
+#saveData_Init saveData_F460.req "P=$(P),SCAN=GSCAN:SCANREC_SP"
+#saveData_Info
+
+## Start any sequence programs
+# generic Scan
+#seq dist_pvs,"DEVICE=$(P)GSCAN"
+#seq csvtxtSaver,"DEVICE=$(P)GSCAN"
+
+## Start autosave
+makeAutosaveFileFromDbInfo("${HOSTNAME}.req","autosaveFields")
+create_monitor_set("${HOSTNAME}.req", 5, "P=")
+
+# create_monitor_set("F460.req", 15)
+#var streamDebug 1
+

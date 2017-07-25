@@ -1,0 +1,7 @@
+NAME=F460
+PORT=7208
+USER=softioc
+HOST=xf06bm-ioc1
+
+CHDIR="$CHDIR/iocBoot/iocF460"
+EXEC="$CHDIR/st.cmd"

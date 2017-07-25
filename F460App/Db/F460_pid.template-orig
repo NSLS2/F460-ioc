@@ -1,0 +1,503 @@
+# PID settings
+#
+## CONFigure:PID:MODE {Mode}
+#        Set (query) the PID mode for PID number PIDNo, PIDNo = 1 or 2.
+#        Mode options for process variable:
+#        0:  Custom
+#        1:  I1
+#        2:  I1+I2
+#        3:  I1-I2
+#        4:  I1/I2
+#        5:  X
+#        6:  Y
+#        7:  I1+I2+I3+I4
+#        
+#        8:  Custom
+#        9:  I1
+#       10:  I1+I2
+#       11:  I1-I2
+#       12:  I1/I2
+#       13:  X
+#       14:  Y
+#       15:  I1+I2+I3+I4
+record(mbbo, "$(P)PID:MODE_OUT") {
+  field(DESC, "PID mode")
+  field(SCAN, "Passive")
+  field(DTYP, "stream")
+  field(OUT, "@F460.protocol writeInt($(P),CONF:PID:MOD) $(PORT) 0")
+
+  field(ZRVL, 0)
+  field(ONVL, 1)
+  field(TWVL, 2)
+  field(THVL, 3)
+  field(FRVL, 4)
+  field(FVVL, 5)
+  field(SXVL, 6)
+  field(SVVL, 7)
+  field(EIVL, 257)
+  field(NIVL, 258)
+  field(TEVL, 258)
+  field(ELVL, 260)
+  field(TVVL, 261)
+  field(TTVL, 262)
+  field(FTVL, 263)
+
+  field(ZRST, "Off")
+  field(ONST, "PID I1")
+  field(TWST, "PID I1+I2")
+  field(THST, "PID I1-I2")
+  field(FRST, "PID I1/I2")
+  field(FVST, "PID X")
+  field(SXST, "PID Y")
+  field(SVST, "PID I1+I2+I3+I4")
+  field(EIST, "Profile I1")
+  field(NIST, "Profile I1+I2")
+  field(TEST, "Profile I1-I2")
+  field(ELST, "Profile I1/I2")
+  field(TVST, "Profile X")
+  field(TTST, "Profile Y")
+  field(FTST, "Profile I1+I2+I3+I4")
+
+  info(autosaveFields, "VAL")
+}
+
+record(mbbi, "$(P)PID:MODE_IN") {
+  field(DESC, "PID mode")
+  field(DTYP, "stream")
+  field(SCAN, "Passive")
+  field(PINI, "$(PINI)")
+  field(INP, "@F460.protocol readInt($(P),CONF:PID:MOD) $(PORT) 0")
+
+  field(ZRVL, 0)
+  field(ONVL, 1)
+  field(TWVL, 2)
+  field(THVL, 3)
+  field(FRVL, 4)
+  field(FVVL, 5)
+  field(SXVL, 6)
+  field(SVVL, 7)
+  field(EIVL, 257)
+  field(NIVL, 258)
+  field(TEVL, 258)
+  field(ELVL, 260)
+  field(TVVL, 261)
+  field(TTVL, 262)
+  field(FTVL, 263)
+
+  field(ZRST, "Off")
+  field(ONST, "PID I1")
+  field(TWST, "PID I1+I2")
+  field(THST, "PID I1-I2")
+  field(FRST, "PID I1/I2")
+  field(FVST, "PID X")
+  field(SXST, "PID Y")
+  field(SVST, "PID I1+I2+I3+I4")
+  field(EIST, "Profile I1")
+  field(NIST, "Profile I1+I2")
+  field(TEST, "Profile I1-I2")
+  field(ELST, "Profile I1/I2")
+  field(TVST, "Profile X")
+  field(TTST, "Profile Y")
+  field(FTST, "Profile I1+I2+I3+I4")
+  field(ZRST, "Off")
+}
+
+
+# CONF:PID:LIMit {LO, HI}
+#     Set (query) the control output analog limits for servo PIDNo to LO and HI (in range -10V to +10V). 
+#     Control output for PIDNo=1 is analog output 1
+#     Control output for PIDNo=2 is analog output 2
+record(ai, "$(P)PID:LO_IN") {
+  field(DESC, "PID low limit")
+  field(DTYP, "stream")
+  field(SCAN, "Passive")
+  field(PINI, "$(PINI)")
+  field(EGU, "V")
+  field(INP, "@F460.protocol getLimit($(P),PID:,CONF:PID:LIM) $(PORT) 0")
+  field(PREC, "$(PREC)")
+}
+
+record(ai, "$(P)PID:HI_IN") {
+  field(DESC, "PID high limit")
+  field(SCAN, "Passive")
+  field(PINI, "$(PINI)")
+  field(EGU, "V")
+  field(PREC, "$(PREC)")
+}
+
+record(ao, "$(P)PID:LO_OUT") {
+  field(DESC, "PID low lim")
+  field(DTYP, "Soft Channel")
+  field(SCAN, "Passive")
+  field(EGU, "V")
+  field(DRVH, "10.0")
+  field(DRVL, "-10.0")
+  field(FLNK, "$(P)PID:WR_LIM")
+  info(autosaveFields, "VAL")
+}
+
+record(ao, "$(P)PID:HI_OUT") {
+  field(DESC, "PID high lim")
+  field(DTYP, "Soft Channel")
+  field(SCAN, "Passive")
+  field(EGU, "V")
+  field(DRVH, "10.0")
+  field(DRVL, "-10.0")
+  field(FLNK, "$(P)PID:WR_LIM")
+  info(autosaveFields, "VAL")
+}
+
+record(calcout, "$(P)PID:WR_LIM") {
+  field(DESC, "PID write limits")
+  field(DTYP, "stream")
+  field(CALC, "0")
+  field(INPA, "$(P)PID:LO_OUT")
+  field(INPB, "$(P)PID:HI_OUT")
+  field(OUT, "@F460.protocol setLimit($(P),PID,CONF:PID:LIM) $(PORT) 0")
+  field(FLNK, "$(P)PID:LO_IN")
+  info(autosaveFields, "VAL A B")
+}
+
+# CONF:PID:ILOW {SigI}
+#     Set (query) the sum SigI amps of the input currents used to form the process variable for PIDNo  
+#     in the selected mode, below which the servo will be suspended
+
+record(ai, "$(P)PID:SIG_IN") {
+  field(DESC, "PID SigI")
+  field(DTYP, "stream")
+  field(SCAN, "Passive")
+  field(PINI, "$(PINI)")
+  field(EGU, "A")
+  field(INP, "@F460.protocol readFloat($(P),CONF:PID:ILOW) $(PORT) 0")
+  field(PREC, "$(PREC)")
+}
+
+record(ao, "$(P)PID:SIG_OUT") {
+  field(DESC, "PID SigI")
+  field(DTYP, "stream")
+  field(SCAN, "Passive")
+  field(OUT, "@F460.protocol writeFloat($(P),CONF:PID:ILOW) $(PORT) 0")
+  field(EGU, "A")
+  field(FLNK, "$(P)PID:SIG_IN")
+  info(autosaveFields, "VAL")
+}
+
+# CONF:PID:KP {Prop}
+#     Set (query) the proportional parameter for servo PIDNo to Prop.
+#
+record(ai, "$(P)PID:KP_IN") {
+  field(DESC, "PID KP")
+  field(DTYP, "stream")
+  field(SCAN, "Passive")
+  field(PINI, "$(PINI)")
+  field(INP, "@F460.protocol readFloat($(P),CONF:PID:KP) $(PORT) 0")
+  field(TPRO, 1)
+  field(PREC, "$(PREC)")
+}
+
+record(ao, "$(P)PID:KP_OUT") {
+  field(DESC, "PID KP")
+  field(DTYP, "stream")
+  field(SCAN, "Passive")
+  field(OUT, "@F460.protocol writeFloat($(P),CONF:PID:KP) $(PORT) 0")
+  field(FLNK, "$(P)PID:KP_IN")
+  field(TPRO, 1)
+  info(autosaveFields, "VAL")
+}
+
+# CONF:PID:KI {Prop}
+#     Set (query) the integral parameter for servo PIDNo to Int.
+record(ai, "$(P)PID:KI_IN") {
+  field(DESC, "PID KI")
+  field(DTYP, "stream")
+  field(SCAN, "Passive")
+  field(PINI, "$(PINI)")
+  field(INP, "@F460.protocol readFloat($(P),CONF:PID:KI) $(PORT) 0")
+  field(PREC, "$(PREC)")
+}
+
+record(ao, "$(P)PID:KI_OUT") {
+  field(DESC, "PID KI")
+  field(DTYP, "stream")
+  field(SCAN, "Passive")
+  field(OUT, "@F460.protocol writeFloat($(P),CONF:PID:KI) $(PORT) 0")
+  field(FLNK, "$(P)PID:KI_IN")
+  info(autosaveFields, "VAL")
+}
+
+# CONF:PID:REF
+#     Set (query) the reference value that is divided out from all
+#     sensor values for PID
+record(ai, "$(P)PID:REF_IN") {
+  field(DESC, "PID reference")
+  field(DTYP, "stream")
+  field(SCAN, "Passive")
+  field(PINI, "$(PINI)")
+  field(INP, "@F460.protocol readFloat($(P),CONF:PID:REF) $(PORT) 0")
+  field(PREC, "$(PREC)")
+}
+
+record(ao, "$(P)PID:REF_OUT") {
+  field(DESC, "PID reference")
+  field(DTYP, "stream")
+  field(SCAN, "Passive")
+  field(OUT, "@F460.protocol writeFloat($(P),CONF:PID:REF) $(PORT) 0")
+  field(FLNK, "$(P)PID:REF_IN")
+  info(autosaveFields, "VAL")
+}
+
+# CONF:PID:PROF:LIMit LO, HI, NumPts
+#     Set (query) the low and high DAC limits in volts for the automated sweep for servo PIDNo.  
+#     The sweep will use the number of points set as the buffer size.
+#     TODO: cannot query with this command
+record(ai, "$(P)PID:DACLO_IN") {
+  field(DESC, "Profile low DAC limit")
+  field(DTYP, "stream")
+  field(INP, "@F460.protocol getProfLimit($(P),PID:) $(PORT) 0")
+  field(SCAN, "Passive")
+  field(PINI, "$(PINI)")
+  field(EGU, "V")
+  field(PREC, "$(PREC)")
+}
+
+record(ai, "$(P)PID:DACHI_IN") {
+  field(DESC, "Profile high DAC limit")
+  field(SCAN, "Passive")
+  field(PINI, "$(PINI)")
+  field(EGU, "V")
+  field(PREC, "$(PREC)")
+}
+
+record(longin, "$(P)PID:NPT_IN") {
+  field(DESC, "Profile points")
+  field(DTYP, "Soft Channel")
+}
+
+record(ao, "$(P)PID:DACLO_OUT") {
+  field(DESC, "Profile DAC low")
+  field(DTYP, "Soft Channel")
+  field(SCAN, "Passive")
+  field(EGU, "V")
+  field(DRVH, "10.0")
+  field(DRVL, "-10.0")
+  field(FLNK, "$(P)PID:WR_DACLIM")
+  info(autosaveFields, "VAL")
+}
+
+record(ao, "$(P)PID:DACHI_OUT") {
+  field(DESC, "Profile DAC high")
+  field(DTYP, "Soft Channel")
+  field(SCAN, "Passive")
+  field(EGU, "V")
+  field(DRVH, "10.0")
+  field(DRVL, "-10.0")
+  field(FLNK, "$(P)PID:WR_DACLIM")
+  info(autosaveFields, "VAL")
+}
+
+record(longout, "$(P)PID:NPT_OUT") {
+  field(DESC, "Profile points")
+  field(DTYP, "Soft Channel")
+  field(FLNK, "$(P)PID:WR_DACLIM")
+  info(autosaveFields, "VAL")
+}
+
+record(calcout, "$(P)PID:WR_DACLIM") {
+  field(DESC, "PID Write DAC limits")
+  field(DTYP, "stream")
+  field(CALC, "0")
+  field(INPA, "$(P)PID:DACLO_OUT")
+  field(INPB, "$(P)PID:DACHI_OUT")
+  field(OUT, "@F460.protocol setProfLimit($(P),PID) $(PORT) 0")
+  field(FLNK, "$(P)PID:DACLO_IN")
+  info(autosaveFields, "VAL A B")
+}
+
+## PID:PROFile pidno 0|1
+#     Set (query) automatic profile state for servo PIDNo
+#     The profile will remain enabled until either turned off by this command, or 
+#     when all data points have been read and the profile is completed.
+
+record(bo, "$(P)PID:PROF_OUT") {
+  field(DESC, "PID profile enable")
+  field(DTYP, "stream")
+  field(SCAN, "Passive")
+  field(PINI, "$(PINI)")
+  field(OUT, "@F460.protocol writeInt($(P),PID:PROF) $(PORT) 0")
+  field(ZNAM, "Profile off")
+  field(ONAM, "Profile on")
+  field(FLNK, "$(P)PID:PROF_IN")
+  info(autosaveFields, "VAL")
+}
+
+record(bi, "$(P)PID:PROF_IN") {
+  field(DESC, "PID Profile enable")
+  field(DTYP, "stream")
+  field(PINI, "$(PINI)")
+  field(INP, "@F460.protocol readInt($(P),PID:PROF) $(PORT) 0")
+  field(ZNAM, "Profile off")
+  field(ONAM, "Profile on")
+}
+
+
+# CONF:PID:RATE {Per}
+# Set (query) the servo period for PIDNo to Per seconds (Per >= 1/200) 
+
+record(ai, "$(P)PID:RATE_IN") {
+  field(DESC, "PID servo period")
+  field(DTYP, "stream")
+  field(SCAN, "Passive")
+  field(PINI, "$(PINI)")
+  field(EGU, "sec")
+  field(INP, "@F460.protocol readFloat($(P),CONF:PID:RATE) $(PORT) 0")
+  field(PREC, "$(PREC)")
+}
+
+record(ao, "$(P)PID:RATE_OUT") {
+  field(DESC, "PID servo period")
+  field(DTYP, "stream")
+  field(SCAN, "Passive")
+  field(OUT, "@F460.protocol writeFloat($(P),CONF:PID:RATE) $(PORT) 0")
+  field(EGU, "sec")
+  field(DRVL, "5e-4")
+  field(FLNK, "$(P)PID:RATE_IN")
+  info(autosaveFields, "VAL")
+}
+
+
+# PID:SERV
+#   Set (query) servo state
+#   0 = disable
+#   1 = enable
+record(bo, "$(P)PID:ENABLE_OUT") {
+  field(DESC, "PID enable")
+  field(DTYP, "stream")
+  field(SCAN, "Passive")
+  field(PINI, "$(PINI)")
+  field(OUT, "@F460.protocol writeInt($(P),PID:SERV) $(PORT) 0")
+  field(ZNAM, "PID off")
+  field(ONAM, "PID on")
+  field(FLNK, "$(P)PID:ENABLE_IN")
+  info(autosaveFields, "VAL")
+}
+
+record(bi, "$(P)PID:ENABLE_IN") {
+  field(DESC, "PID enable")
+  field(DTYP, "stream")
+  field(PINI, "$(PINI)")
+  field(INP, "@F460.protocol readInt($(P),PID:SERV) $(PORT) 0")
+  field(ZNAM, "PID off")
+  field(ONAM, "PID on")
+}
+
+
+#
+#
+## FET:PID? [numSamples]
+#    Fetch the running servo data.
+#    {PID Enabled, DAC initial V, DAC V, AnalogIn1 V, Measured process value f(I1,I2,I3,I4), 
+#     Target process value f(I1,I2,I3,I4), Sum of (TargetProcessValue-ActualProcessValue), 
+#     Following error (TargetProcessValue-ActualProcessValue),DAC low limit hit (0|1), 
+#     DAC high limit hit (0|1), low current limit hit (0|1),timestamp,time-slice number
+#    May have additional fields if second PID is enabled.
+#    Returns up to 9 samples.
+
+record(bo, "$(P)PID:READ") {
+  field(DESC, "Read PID inputs")
+  field(DTYP, "stream")
+  field(PINI, "$(PINI)")
+  field(ZNAM, "Read PID")
+  field(ONAM, "Read PID")
+  field(OUT, "@F460.protocol get1PID($(P),PID,PID) $(PORT) 0")
+  field(FLNK, "$(P)PID:ENABLED_IN")
+#  field(TPRO, 1)
+  #field(SCAN, "Passive")
+  #field(SCAN, "1 second")
+}
+
+record(bi, "$(P)PID:ENABLED_IN") {
+  # Enabled according to fetch
+  #field(DESC, "(PID enabled)")
+  field(ONAM, "PID Enabled")
+  field(ONAM, "PID Disabled")
+  field(FLNK, "$(P)PID:INIT_V_IN")
+}
+
+record(ai, "$(P)PID:INIT_V_IN") {
+  field(DESC, "PID initial voltage")
+  field(EGU, "V")
+  field(PREC, "$(PREC)")
+  field(FLNK, "$(P)PID:VOLTS_IN")
+}
+
+record(ai, "$(P)PID:VOLTS_IN") {
+  field(DESC, "PID input voltage")
+  field(EGU, "V")
+  field(PREC, "$(PREC)")
+  field(FLNK, "$(P)PID:AN1_IN")
+}
+
+record(ai, "$(P)PID:AN1_IN") {
+  field(DESC, "PID analog in 1")
+  field(EGU, "V")
+  field(PREC, "$(PREC)")
+  field(FLNK, "$(P)PID:PROC:MEAS_IN")
+}
+
+record(ai, "$(P)PID:PROC:MEAS_IN") {
+  field(DESC, "PID measured process value")
+  field(EGU, "")
+  field(PREC, "$(PREC)")
+  field(FLNK, "$(P)PID:PROC:TGT_IN")
+}
+
+record(ai, "$(P)PID:PROC:TGT_IN") {
+  field(DESC, "PID target process value")
+  field(EGU, "sec")
+  field(PREC, "3")
+  field(FLNK, "$(P)PID:PROC:DIFF_IN")
+}
+
+record(ai, "$(P)PID:PROC:DIFF_IN") {
+  field(DESC, "PID target-actual")
+  #field(FLNK, "$(P)PID:FOL_ERR_IN")
+  field(TPRO, 1)
+}
+
+record(ai, "$(P)PID:FOL_ERR_IN") {
+  field(DESC, "PID following error")
+  field(TPRO, 1)
+}
+
+record(bi, "$(P)PID:LOW_DAC_IN") {
+  field(DESC, "PID low DAC limit")
+  field(ZSV, "NO_ALARM")
+  field(OSV, "MINOR")
+  field(ZNAM, "Normal")
+  field(ONAM, "Low limit")
+}
+
+record(bi, "$(P)PID:HI_DAC_IN") {
+  field(DESC, "PID high DAC limit")
+  field(ZSV, "NO_ALARM")
+  field(OSV, "MINOR")
+  field(ZNAM, "Normal")
+  field(ONAM, "High limit")
+}
+
+record(bi, "$(P)PID:LOW_I_IN") {
+  field(DESC, "PID low current limit")
+  field(ZSV, "NO_ALARM")
+  field(OSV, "MINOR")
+  field(ZNAM, "Normal")
+  field(ONAM, "Low limit")
+}
+
+record(ai, "$(P)PID:TS_IN") {
+  field(DESC, "PID timestamp")
+}
+
+record(ai, "$(P)PID:TS_NUM_IN") {
+  field(DESC, "PID timeslice number")
+}
+

@@ -1,0 +1,344 @@
+#
+# StreamDevice protocol for the F460.
+#
+# Send:
+#  command\n
+#
+# Receive:
+#  command\n
+#  response1\n
+#  response2\n\r <-- end of response \r
+#
+InTerminator = LF;
+OutTerminator = LF;
+replytimeout = 3000;
+readtimeout  = 3000;
+locktimeout = 60000;
+
+#
+# Query Identification string (*IDN)
+#
+getId {
+    out "*IDN?"; 
+    in "*IDN?\n%\$1c";
+    InTerminator = CR LF;
+}
+
+parseId {
+    out "*IDN?"; 
+    in "*IDN?";
+    in "PYRTECHCO,%(\$1Model-I)[^,],%(\$1Serial-I)[^,],%(\$1Firmware-I)s\r";
+      # PYRTECHCO,f460_1-REV0,0000003092,3.7.4/1.0.7
+}
+
+error_chars = "[a-zA-Z0-9._: ]";
+error_string = "%(\$1ErrCode-Sts.VAL)d,\"%(\$1ErrDesc-Sts.VAL)[^\"]\"\r";
+# Note: can't define @mismatch globally due to $1 prefix
+#    @mismatch { in $error_string; }
+
+# F460 Calibration
+#
+# Set/Query Current Compensation Factors
+#  (Reading is per-channel, writing is all channels)
+setComp {
+    @mismatch { in $error_string; }
+    out "CALIB:COMP %(A).2g %(B).2g %(C).2g %(D).2g %(E).2g %(F).2g %(G).2g %(H).2g";
+    in  "CALIB:COMP %*g %*g %*g %*g %*g %*g %*g %*g";
+    in "%*c\r";
+}
+
+getComp {
+    @mismatch { in $error_string; }
+    out "CALIB:COMP? \$2"; 
+    in  "CALIB:COMP? \$2";
+    in "%(\$1\$3.VAL)f,%(\$1\$4.VAL)f\r";
+}
+
+# Query calibration gains
+# Get gain/offset x4 (per channel)
+getRGain {
+    @mismatch { in $error_string; }
+    # arguments:
+    #   device, ch:range_prefix, channel number, gain suffix, offset suffix
+    out "CALIB:GAI? \$3"; 
+    in  "CALIB:GAI? \$3";
+    in "%(\$1\${2}1:\$4.VAL)f,%(\$1\${2}1:\$5.VAL)f,%(\$1\${2}2:\$4.VAL)f,%(\$1\${2}2:\$5.VAL)f,%(\$1\${2}3:\$4.VAL)f,%(\$1\${2}3:\$5.VAL)f,%(\$1\${2}4:\$4.VAL)f,%(\$1\${2}4:\$5.VAL)f\r";
+}
+
+# Query current range max
+#
+getRangeMax {
+    @mismatch { in $error_string; }
+    # arguments:
+    #   device, ch:range_prefix, channel number, max suffix
+    out "CALIB:RAN? \$3"; 
+    in  "CALIB:RAN? \$3";
+    in "%(\$1\${2}1:\$4.VAL)f,%(\$1\${2}2:\$4.VAL)f,%(\$1\${2}3:\$4.VAL)f,%(\$1\${2}4:\$4.VAL)f\r";
+}
+
+# Set PID mode
+#  (Reading is per-channel, writing is all channels)
+setPIDMode {
+    @mismatch { in $error_string; }
+    out "CONF:PID:MOD %(A)d %(B)d";
+    in "CONF:PID:MOD %*d %*d";
+    in "OK\r";
+}
+
+# Query limits (per channel)
+getLimitCh {
+    @mismatch { in $error_string; }
+    # arguments:
+    #   device, pid_prefix, pid number, command
+    out "\$4? \$3"; 
+    in  "\$4? \$3"; 
+    in  "%(\$1\${2}Lo-I.VAL)f,%(\$1\${2}Hi-I.VAL)f\r";
+}
+
+setLimitCh {
+    @mismatch { in $error_string; }
+    # arguments:
+    #   device, pid_prefix, pid number, command
+    out "\$4 \$3 %(A).2g %(B).2g";
+    in "\$4 \$3 %*g %*g"; 
+    in "OK\r";
+}
+
+# Query limits
+getLimit {
+    @mismatch { in $error_string; }
+    # arguments:
+    #   device, pid_prefix, command
+    out "\$3?";
+    in  "\$3?";
+    in  "%(\$1\${2}Lo-I.VAL)f,%(\$1\${2}Hi-I.VAL)f\r";
+}
+
+setLimit {
+    @mismatch { in $error_string; }
+    # arguments:
+    #   device, pid_prefix, command
+    out "\$3 %(A).2g %(B).2g";
+    in "\$3 %*g %*g"; 
+    in "OK\r";
+}
+
+# Query profile limits
+getProfLimit {
+    @mismatch { in $error_string; }
+    # arguments:
+    #   device, pid_prefix
+    out "CONF:PID:PROF:LIM?";
+    in  "CONF:PID:PROF:LIM?";
+    in  "%(\$1\${2}DacLo-I.VAL)f,%(\$1\${2}DacHi-I.VAL)f,%(\$1\${2}Npt-I.VAL)d\r";
+}
+
+setProfLimit {
+    @mismatch { in $error_string; }
+    # arguments:
+    #   device, pid_prefix
+    out "CONF:PID:PROF:LIM %(A).2g %(B).2g";
+    in "CONF:PID:PROF:LIM %*g %*g"; 
+    in "OK\r";
+}
+
+## Fetch
+#
+## FET:ANAlogIn? [numSamples]
+get1Ana {
+    # Single analog input fetch
+    @mismatch { in $error_string; }
+    # arguments:
+    #   device, ana_prefix
+    out "FET:ANA?";
+    in  "FET:ANA?";
+    #0.0000e+00 S,0.0000e+00 V,0.0000e+00 V,0.0000e+00 S,0
+    in "%(\$1\$2:Per.VAL)f S,%(\$1\$2:Ai1.VAL)f V,%(\$1\$2:Ai2.VAL)f V,%(\$1\$2:Time-I.VAL)f S,%(\$1\$2:TrigCnt-I.VAL)d\r";
+}
+
+## FET:SENsor? [numSamples]
+## or FET:CURrent [numSamples]
+get1Sen {
+    # arguments:
+    #   prefix, prefix:(*):pv, fetch type (SEN/CUR)
+    @mismatch { in $error_string; }
+    # arguments:
+    #   device, sensor_prefix
+    out "FET:\$3?";
+    in  "FET:\$3?";
+    # 0.0000e+00 S,0.0000e+00 A,0.0000e+00 A,0.0000e+00 A,0.0000e+00 A,0.0000e+00 S,0
+    in "%(\$1\$2:Per.VAL)f S,%(\$1\$2:I0-I.VAL)f A,%(\$1\$2:I1-I.VAL)f A,%(\$1\$2:I2-I.VAL)f A,%(\$1\$2:I3-I.VAL)f A,%(\$1\$2:Time-I.VAL)f S,%(\$1\$2:TrigCnt-I.VAL)d\r";
+}
+
+## FET:PID? [numsamples]
+
+get1PID {
+    # Single sensor input fetch
+    @mismatch { in $error_string; }
+    # arguments:
+    #   device, sensor_prefix, fetch command
+    out "FET:\$3?";
+    in  "FET:\$3?";
+    # 0,0.0000e+00 V,0.0000e+00 V,0.0000e+00 V,0.0000e+00,0.0000e+00,0.0000e+00,0.0000e+00,0,0,0,8.4429e+04 S,844289
+    in "%(\$1\$2:Enabled-I.VAL)d,%(\$1\$2:InitV-I.VAL)f V,%(\$1\$2:Volts-I.VAL)f V,%(\$1\$2:An1-I.VAL)f V,%(\$1\$2:Proc:Meas-I.VAL)f,%(\$1\$2:Proc:Tgt-I)f,%(\$1\$2:Proc:Diff-I)f,%(\$1\$2:FolErr-I)f,%(\$1\$2:LowDac-I.VAL)d,%(\$1\$2:HiDac-I.VAL)d,%(\$1\$2:LowI-I.VAL)d,%(\$1\$2:Ts-I.VAL)f,%(\$1\$2:TsNum-I.VAL)d\r";
+}
+
+#
+## Generic ones
+## - Floats
+writeFloat {
+    # arguments:
+    #   device, command
+    @mismatch { in $error_string; }
+    out "\$2 %f"; 
+    in  "\$2 %*f";
+    in "OK\r";
+}
+
+readFloat {
+    # arguments:
+    #   device, command
+    @mismatch { in $error_string; }
+    out "\$2?"; 
+    in  "\$2?";
+    in "%f\r";
+}
+
+readFloatEGU {
+    # arguments:
+    #   device, command, EGU
+    @mismatch { in $error_string; }
+    out "\$2?"; 
+    in  "\$2?";
+    in "%f \$3\r";
+}
+
+## - Integers
+writeInt {
+    # arguments:
+    #   device, command
+    @mismatch { in $error_string; }
+    out "\$2 %d"; 
+    in  "\$2 %*d";
+    in "OK\r";
+}
+
+readInt {
+    # arguments:
+    #   device, command
+    @mismatch { in $error_string; }
+    out "\$2?"; 
+    in  "\$2?";
+    in "%d\r";
+}
+
+writeIntArg {
+    # arguments:
+    #   device, command, value
+    @mismatch { in $error_string; }
+    out "\$2 \$3"; 
+    in  "\$2 \$3";
+    in "OK\r";
+}
+
+## - Strings
+writeStr {
+    # arguments:
+    #   device, command
+    @mismatch { in $error_string; }
+    out "\$2 %s"; 
+    in  "\$2 %*s";
+    in "OK\r";
+}
+
+readStr {
+    # arguments:
+    #   device, command
+    @mismatch { in $error_string; }
+    out "\$2?"; 
+    in  "\$2?";
+    in "%s\r";
+}
+
+# Generic, per-channel
+## - Floats
+writeChFloat {
+    # arguments:
+    #   device, command, channel
+    @mismatch { in $error_string; }
+    out "\$2 \$3 %f"; 
+    in  "\$2 \$3 %*f";
+    in "OK\r";
+}
+
+readChFloat {
+    # arguments:
+    #   device, command, channel
+    @mismatch { in $error_string; }
+    out "\$2? \$3"; 
+    in  "\$2? \$3";
+    in "%f\r";
+}
+
+## - Integers
+writeChInt {
+    # arguments:
+    #   device, command, channel
+    @mismatch { in $error_string; }
+    out "\$2 \$3 %d"; 
+    in  "\$2 \$3 %*d";
+    in "OK\r";
+}
+
+readChInt {
+    # arguments:
+    #   device, command, channel
+    @mismatch { in $error_string; }
+    out "\$2? \$3"; 
+    in  "\$2? \$3";
+    in "%d\r";
+}
+
+readError {
+    # arguments:
+    #   device
+    @mismatch { in $error_string; }
+
+    out "SYST:ERR:NEXT?";
+    in "SYST:ERR:NEXT?";
+    in $error_string;
+}
+
+# Abort
+abort {
+    # arguments:
+    #   device
+    @mismatch { in $error_string; }
+
+    out "ABOR";
+    in "OK";
+}
+#
+# State commands
+#
+# Save current state in EEPROM
+save {out "*SAV"; in "*SAV%*5c";}
+
+# Recall state from EEPROM
+recall {out "*RCL"; in "*RCL%*5c";}
+
+# Return F460 to default conditions
+reset {out "*RST"; in "*RST%*5c";}
+
+# Clear F460 event registers and error queue
+clear {out "*CLS"; in "*CLS\n%*c";}
+
+#
+# Initiate readings on valid trigger
+#
+init {
+    out "INIT"; 
+    in "INIT";
+    in "OK\r";
+}
+

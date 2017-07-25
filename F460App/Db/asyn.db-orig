@@ -1,0 +1,4 @@
+record(asyn,"$(P)COMM") {
+  field(PORT,"$(PORT)")
+  field(ADDR,"$(ADDR)")
+}

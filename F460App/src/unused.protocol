@@ -1,0 +1,61 @@
+## FET:ANAlogIn? [numSamples]
+getAna {
+    @mismatch { in $error_string; }
+    # arguments:
+    #   device, ana_prefix
+    # TODO: firmware does not recognize numSamples?
+    #
+    out "FET:ANA? %(\$1BUF_SZ_IN)d"; 
+    in  "FET:ANA? %*d";
+    #0.0000e+00 S,0.0000e+00 V,0.0000e+00 V,0.0000e+00 S,0
+    fmt = "%(\$1\$2:PER.VAL)f S,%(\$1\$2:AI1.VAL)f V,%(\$1\$2:AI2.VAL)f V,%(\$1\$2:TIME.VAL)f S,%(\$1\$2:TRIG_CNT.VAL)d\r";
+
+    # TODO: if an error code is matched, it will update the PER(iod) record
+    # Up to 12 entries into the circular buffer:
+    in ${fmt};
+    in ${fmt};
+    in ${fmt};
+    in ${fmt};
+
+    in ${fmt};
+    in ${fmt};
+    in ${fmt};
+    in ${fmt};
+
+    in ${fmt};
+    in ${fmt};
+    in ${fmt};
+    in ${fmt};
+}
+
+
+## FET:SENsor? [numSamples]
+getSen {
+    @mismatch { in $error_string; }
+    # arguments:
+    #   device, sensor_prefix, cmd
+    # TODO: firmware does not recognize numSamples?
+    #
+    out "FET:\$3? %(\$1BUF_SZ_IN)d"; 
+    in  "FET:\$3? %*d";
+    # 0.0000e+00 S,0.0000e+00 A,0.0000e+00 A,0.0000e+00 A,0.0000e+00 A,0.0000e+00 S,0
+    fmt = "%(\$1\$2:PER.VAL)f S,%(\$1\$2:I0.VAL)f A,%(\$1\$2:I1.VAL)f A,%(\$1\$2:I2.VAL)f A,%(\$1\$2:I3.VAL)f A,%(\$1\$2:TIME.VAL)f S,%(\$1\$2:TRIG_CNT.VAL)d\r";
+
+    # TODO: if an error code is matched, it will update the PER(iod) record
+    # Up to 12 entries into the circular buffer:
+    in ${fmt};
+    in ${fmt};
+    in ${fmt};
+    in ${fmt};
+
+    in ${fmt};
+    in ${fmt};
+    in ${fmt};
+    in ${fmt};
+
+    in ${fmt};
+    in ${fmt};
+    in ${fmt};
+    in ${fmt};
+}
+

@@ -1,0 +1,165 @@
+# F460 per-channel settings
+# vim: ts=2 sw=2
+
+## CALIB:COMP? -- gains and offsets
+record(ai, "$(P)CH$(CH):GAIN_IN") {
+  field(DESC, "Ch$(CH) gain")
+  field(PREC, "$(PREC)")
+}
+
+record(ai, "$(P)CH$(CH):OFF_IN") {
+  field(DESC, "Ch$(CH) offset")
+  field(PREC, "$(PREC)")
+}
+
+record(ao, "$(P)CH$(CH):GAIN_OUT") {
+  field(DESC, "Ch$(CH) gain setpoint")
+  field(PREC, "$(PREC)")
+  
+  field(FLNK, "$(P)WRITE_COMP_")
+  info(autosaveFields, "VAL")
+}
+
+record(ao, "$(P)CH$(CH):OFF_OUT") {
+  field(DESC, "Ch$(CH) offset setpoint")
+  field(PREC, "$(PREC)")
+
+  field(FLNK, "$(P)WRITE_COMP_")
+  info(autosaveFields, "VAL")
+}
+
+record(bo, "$(P)CH$(CH):RD_COMP") {
+  field(DESC, "Read compensation")
+  field(DTYP, "stream")
+  field(OUT, "@F460.protocol getComp($(P),$(CH),CH$(CH):GAIN_IN,CH$(CH):OFF_IN) $(PORT) 0")
+  field(PINI, "$(PINI)")
+  field(ZNAM, "Read")
+  field(ONAM, "Read")
+  field(FLNK, "$(P)CH$(CH):RD_RANGE")
+}
+
+
+record(ai, "$(P)CH$(CH):R1:GAIN_IN") {
+  field(DESC, "Ch$(CH) gain range 1")
+  field(PREC, "$(PREC)")
+}
+record(ai, "$(P)CH$(CH):R2:GAIN_IN") {
+  field(DESC, "Ch$(CH) gain range 2")
+  field(PREC, "$(PREC)")
+}
+record(ai, "$(P)CH$(CH):R3:GAIN_IN") {
+  field(DESC, "Ch$(CH) gain range 3")
+  field(PREC, "$(PREC)")
+}
+record(ai, "$(P)CH$(CH):R4:GAIN_IN") {
+  field(DESC, "Ch$(CH) gain range 4")
+  field(PREC, "$(PREC)")
+}
+
+record(ai, "$(P)CH$(CH):R1:OFF_IN") {
+  field(DESC, "Ch$(CH) offset range 1")
+  field(PREC, "$(PREC)")
+}
+record(ai, "$(P)CH$(CH):R2:OFF_IN") {
+  field(DESC, "Ch$(CH) offset range 2")
+  field(PREC, "$(PREC)")
+}
+record(ai, "$(P)CH$(CH):R3:OFF_IN") {
+  field(DESC, "Ch$(CH) offset range 3")
+  field(PREC, "$(PREC)")
+}
+record(ai, "$(P)CH$(CH):R4:OFF_IN") {
+  field(DESC, "Ch$(CH) offset range 4")
+  field(PREC, "$(PREC)")
+}
+
+record(bo, "$(P)CH$(CH):RD_RANGE") {
+  field(DESC, "Read range")
+  field(DTYP, "stream")
+  field(ZNAM, "Read")
+  field(ONAM, "Read")
+  field(OUT, "@F460.protocol getRGain($(P),CH$(CH):R,$(CH),GAIN_IN,OFF_IN) $(PORT) 0")
+  field(TPRO, 1)
+  field(FLNK, "$(P)CH$(CH):RD_MAX")
+}
+
+## CALIB:RAN? -- range maxes
+record(ai, "$(P)CH$(CH):R1:MAX_IN") {
+  field(DESC, "Ch$(CH) max range 1")
+  #field(TPRO, "1")
+  field(PREC, "$(PREC)")
+}
+record(ai, "$(P)CH$(CH):R2:MAX_IN") {
+  field(DESC, "Ch$(CH) max range 2")
+  field(PREC, "$(PREC)")
+}
+record(ai, "$(P)CH$(CH):R3:MAX_IN") {
+  field(DESC, "Ch$(CH) max range 3")
+  field(PREC, "$(PREC)")
+}
+record(ai, "$(P)CH$(CH):R4:MAX_IN") {
+  field(DESC, "Ch$(CH) max range 4")
+  field(PREC, "$(PREC)")
+}
+
+record(bo, "$(P)CH$(CH):RD_MAX") {
+  field(DESC, "Read range max")
+  field(DTYP, "stream")
+  field(OUT, "@F460.protocol getRangeMax($(P),CH$(CH):R,$(CH),MAX_IN) $(PORT) 0")
+  field(ZNAM, "Read")
+  field(ONAM, "Read")
+}
+
+## CONF:RANge chan range -- which number range to use
+record(mbbo, "$(P)CH$(CH):RANGE_OUT") {
+  field(DTYP, "stream")
+  field(DESC, "Ch$(CH) range")
+  field(OUT, "@F460.protocol writeChInt($(P),CONF:RAN,$(CH)) $(PORT) 0")
+  field(ZRST, "Range 1")
+  field(ONST, "Range 2")
+  field(TWST, "Range 3")
+  field(THST, "Range 4")
+  field(FLNK, "$(P)CH$(CH):RANGE_IN")
+
+  info(autosaveFields, "VAL")
+}
+
+record(mbbi, "$(P)CH$(CH):RANGE_IN") {
+  field(DTYP, "stream")
+  field(DESC, "Ch$(CH) range")
+  field(SCAN, "Passive")
+  field(PINI, "$(PINI)")
+  field(ZRST, "Range 1")
+  field(ONST, "Range 2")
+  field(TWST, "Range 3")
+  field(THST, "Range 4")
+  field(INP, "@F460.protocol readChInt($(P),CONF:RAN,$(CH)) $(PORT) 0")
+}
+
+## OUT:ANAlog 
+# Only available if OUTput:MONitor is set to mode 3 and
+# PID is not being run for the particular output.
+# Otherwise, these outputs are active as monitors.
+record(ao, "$(P)CH$(CH):ANA_OUT") {
+  field(DESC, "Analog output value")
+  field(DTYP, "stream")
+  field(SCAN, "Passive")
+  field(OUT, "@F460.protocol writeChFloat($(P),OUT:ANA,$(CH)) $(PORT) 0")
+  field(EGU, "V")
+  field(DRVH, "10.0")
+  field(DRVL, "-10.0")
+  field(FLNK, "$(P)CH$(CH):ANA_IN")
+  field(PREC, "$(PREC)")
+  info(autosaveFields, "VAL")
+}
+
+record(ai, "$(P)CH$(CH):ANA_IN") {
+  field(DESC, "Analog output value")
+  field(DTYP, "stream")
+  field(SCAN, "Passive")
+  field(PINI, "$(PINI)")
+  field(EGU, "V")
+  field(INP, "@F460.protocol readChFloat($(P),OUT:ANA,$(CH)) $(PORT) 0")
+  field(PREC, "$(PREC)")
+}
+
