@@ -271,7 +271,7 @@ $(pv_value)</tooltip>
       <format_type>0</format_type>
       <precision_from_pv>false</precision_from_pv>
       <transparent>true</transparent>
-      <pv_name>$(P)CH$(CH):ANA_IN</pv_name>
+      <pv_name>$(P)Ch$(CH):ANA_IN</pv_name>
       <background_color>
         <color red="255" green="255" blue="255" />
       </background_color>
@@ -339,7 +339,7 @@ $(pv_value)</tooltip>
       </scale_options>
       <selector_type>0</selector_type>
       <transparent>false</transparent>
-      <pv_name>$(P)CH$(CH):ANA_OUT</pv_name>
+      <pv_name>$(P)Ch$(CH):ANA_OUT</pv_name>
       <foreground_color>
         <color red="0" green="0" blue="0" />
       </foreground_color>
@@ -459,7 +459,7 @@ $(pv_value)</tooltip>
       <format_type>0</format_type>
       <precision_from_pv>false</precision_from_pv>
       <transparent>true</transparent>
-      <pv_name>$(P)CH$(CH):GAIN_IN</pv_name>
+      <pv_name>$(P)Ch$(CH):GAIN_IN</pv_name>
       <background_color>
         <color red="255" green="255" blue="255" />
       </background_color>
@@ -527,7 +527,7 @@ $(pv_value)</tooltip>
       </scale_options>
       <selector_type>0</selector_type>
       <transparent>false</transparent>
-      <pv_name>$(P)CH$(CH):GAIN_OUT</pv_name>
+      <pv_name>$(P)Ch$(CH):GAIN_OUT</pv_name>
       <foreground_color>
         <color red="0" green="0" blue="0" />
       </foreground_color>
@@ -647,7 +647,7 @@ $(pv_value)</tooltip>
       <format_type>0</format_type>
       <precision_from_pv>false</precision_from_pv>
       <transparent>true</transparent>
-      <pv_name>$(P)CH$(CH):R1:GAIN_IN</pv_name>
+      <pv_name>$(P)Ch$(CH):R1:GAIN_IN</pv_name>
       <background_color>
         <color red="255" green="255" blue="255" />
       </background_color>
@@ -698,7 +698,7 @@ $(pv_value)</tooltip>
       <format_type>0</format_type>
       <precision_from_pv>false</precision_from_pv>
       <transparent>true</transparent>
-      <pv_name>$(P)CH$(CH):R2:GAIN_IN</pv_name>
+      <pv_name>$(P)Ch$(CH):R2:GAIN_IN</pv_name>
       <background_color>
         <color red="255" green="255" blue="255" />
       </background_color>
@@ -749,7 +749,7 @@ $(pv_value)</tooltip>
       <format_type>0</format_type>
       <precision_from_pv>false</precision_from_pv>
       <transparent>true</transparent>
-      <pv_name>$(P)CH$(CH):R3:GAIN_IN</pv_name>
+      <pv_name>$(P)Ch$(CH):R3:GAIN_IN</pv_name>
       <background_color>
         <color red="255" green="255" blue="255" />
       </background_color>
@@ -800,7 +800,7 @@ $(pv_value)</tooltip>
       <format_type>0</format_type>
       <precision_from_pv>false</precision_from_pv>
       <transparent>true</transparent>
-      <pv_name>$(P)CH$(CH):R4:GAIN_IN</pv_name>
+      <pv_name>$(P)Ch$(CH):R4:GAIN_IN</pv_name>
       <background_color>
         <color red="255" green="255" blue="255" />
       </background_color>
@@ -932,7 +932,7 @@ $(pv_value)</tooltip>
       <format_type>0</format_type>
       <precision_from_pv>false</precision_from_pv>
       <transparent>true</transparent>
-      <pv_name>$(P)CH$(CH):R1:MAX_IN</pv_name>
+      <pv_name>$(P)Ch$(CH):R1:MAX_IN</pv_name>
       <background_color>
         <color red="255" green="255" blue="255" />
       </background_color>
@@ -983,7 +983,7 @@ $(pv_value)</tooltip>
       <format_type>0</format_type>
       <precision_from_pv>false</precision_from_pv>
       <transparent>true</transparent>
-      <pv_name>$(P)CH$(CH):R2:MAX_IN</pv_name>
+      <pv_name>$(P)Ch$(CH):R2:MAX_IN</pv_name>
       <background_color>
         <color red="255" green="255" blue="255" />
       </background_color>
@@ -1034,7 +1034,7 @@ $(pv_value)</tooltip>
       <format_type>0</format_type>
       <precision_from_pv>false</precision_from_pv>
       <transparent>true</transparent>
-      <pv_name>$(P)CH$(CH):R3:MAX_IN</pv_name>
+      <pv_name>$(P)Ch$(CH):R3:MAX_IN</pv_name>
       <background_color>
         <color red="255" green="255" blue="255" />
       </background_color>
@@ -1085,7 +1085,7 @@ $(pv_value)</tooltip>
       <format_type>0</format_type>
       <precision_from_pv>false</precision_from_pv>
       <transparent>true</transparent>
-      <pv_name>$(P)CH$(CH):R4:MAX_IN</pv_name>
+      <pv_name>$(P)Ch$(CH):R4:MAX_IN</pv_name>
       <background_color>
         <color red="255" green="255" blue="255" />
       </background_color>
@@ -1217,7 +1217,7 @@ $(pv_value)</tooltip>
       <format_type>0</format_type>
       <precision_from_pv>false</precision_from_pv>
       <transparent>true</transparent>
-      <pv_name>$(P)CH$(CH):OFF_IN</pv_name>
+      <pv_name>$(P)Ch$(CH):OFF_IN</pv_name>
       <background_color>
         <color red="255" green="255" blue="255" />
       </background_color>
@@ -1285,7 +1285,7 @@ $(pv_value)</tooltip>
       </scale_options>
       <selector_type>0</selector_type>
       <transparent>false</transparent>
-      <pv_name>$(P)CH$(CH):OFF_OUT</pv_name>
+      <pv_name>$(P)Ch$(CH):OFF_OUT</pv_name>
       <foreground_color>
         <color red="0" green="0" blue="0" />
       </foreground_color>
@@ -1405,7 +1405,7 @@ $(pv_value)</tooltip>
       <format_type>0</format_type>
       <precision_from_pv>false</precision_from_pv>
       <transparent>true</transparent>
-      <pv_name>$(P)CH$(CH):R1:OFF_IN</pv_name>
+      <pv_name>$(P)Ch$(CH):R1:OFF_IN</pv_name>
       <background_color>
         <color red="255" green="255" blue="255" />
       </background_color>
@@ -1456,7 +1456,7 @@ $(pv_value)</tooltip>
       <format_type>0</format_type>
       <precision_from_pv>false</precision_from_pv>
       <transparent>true</transparent>
-      <pv_name>$(P)CH$(CH):R2:OFF_IN</pv_name>
+      <pv_name>$(P)Ch$(CH):R2:OFF_IN</pv_name>
       <background_color>
         <color red="255" green="255" blue="255" />
       </background_color>
@@ -1507,7 +1507,7 @@ $(pv_value)</tooltip>
       <format_type>0</format_type>
       <precision_from_pv>false</precision_from_pv>
       <transparent>true</transparent>
-      <pv_name>$(P)CH$(CH):R3:OFF_IN</pv_name>
+      <pv_name>$(P)Ch$(CH):R3:OFF_IN</pv_name>
       <background_color>
         <color red="255" green="255" blue="255" />
       </background_color>
@@ -1558,7 +1558,7 @@ $(pv_value)</tooltip>
       <format_type>0</format_type>
       <precision_from_pv>false</precision_from_pv>
       <transparent>true</transparent>
-      <pv_name>$(P)CH$(CH):R4:OFF_IN</pv_name>
+      <pv_name>$(P)Ch$(CH):R4:OFF_IN</pv_name>
       <background_color>
         <color red="255" green="255" blue="255" />
       </background_color>
@@ -1690,7 +1690,7 @@ $(pv_value)</tooltip>
       <format_type>0</format_type>
       <precision_from_pv>true</precision_from_pv>
       <transparent>true</transparent>
-      <pv_name>$(P)CH$(CH):RANGE_IN</pv_name>
+      <pv_name>$(P)Ch$(CH):RANGE_IN</pv_name>
       <background_color>
         <color red="255" green="255" blue="255" />
       </background_color>
@@ -1734,7 +1734,7 @@ $(pv_value)</tooltip>
         <height_scalable>true</height_scalable>
         <keep_wh_ratio>false</keep_wh_ratio>
       </scale_options>
-      <pv_name>$(P)CH$(CH):RANGE_OUT</pv_name>
+      <pv_name>$(P)Ch$(CH):RANGE_OUT</pv_name>
       <background_color>
         <color red="255" green="255" blue="255" />
       </background_color>
@@ -1777,7 +1777,7 @@ $(pv_value)</tooltip>
       <height_scalable>true</height_scalable>
       <keep_wh_ratio>false</keep_wh_ratio>
     </scale_options>
-    <pv_name>$(P)CH$(CH):RD_COMP</pv_name>
+    <pv_name>$(P)Ch$(CH):RD_COMP</pv_name>
     <foreground_color>
       <color red="0" green="0" blue="0" />
     </foreground_color>
@@ -1801,7 +1801,7 @@ $(pv_value)</tooltip>
     <y>43</y>
     <actions hook="false" hook_all="false">
       <action type="WRITE_PV">
-        <pv_name>$(P)CH$(CH):RD_COMP</pv_name>
+        <pv_name>$(P)Ch$(CH):RD_COMP</pv_name>
         <value>1</value>
         <timeout>10</timeout>
         <confirm_message></confirm_message>

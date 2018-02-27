@@ -42,7 +42,7 @@ error_string = "%(\$1ErrCode-Sts.VAL)d,\"%(\$1ErrDesc-Sts.VAL)[^\"]\"\r";
 #  (Reading is per-channel, writing is all channels)
 setComp {
     @mismatch { in $error_string; }
-    out "CALIB:COMP %(A).2g %(B).2g %(C).2g %(D).2g %(E).2g %(F).2g %(G).2g %(H).2g";
+    out "CALIB:COMP %(A)2g %(B)2g %(C).2g %(D).2g %(E).2g %(F).2g %(G).2g %(H).2g";
     in  "CALIB:COMP %*g %*g %*g %*g %*g %*g %*g %*g";
     in "%*c\r";
 }
