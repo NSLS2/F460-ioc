@@ -1,15 +1,16 @@
-syntax: regexp
-
 as/
 autosave/
 bin/
 db/
 dbd/
+lib/
+^pmc/
+iocBoot/.*/envPaths
 O.*/
-\#.*\#
-.*~
+\#*#
+*~
 records.dbl
 .bzr/
 .bzrignore
-.git/
-.gitignore
+.hg/
+.hgignore
