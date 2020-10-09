@@ -1,6 +1,7 @@
 #!../../bin/linux-x86_64/F460
 
 < envPaths
+< /epics/common/xf06bm-ioc1-netsetup.cmd
 
 cd ${TOP}
 
@@ -18,8 +19,8 @@ epicsEnvSet("PORT", "E1")
 epicsEnvSet("Dev2", "{F460:2}")
 epicsEnvSet("PORT2", "E2")
 
-drvAsynIPPortConfigure("$(PORT)", "10.6.130.52:4002")
-drvAsynIPPortConfigure("$(PORT2)", "10.6.130.55:4002")
+drvAsynIPPortConfigure("$(PORT)", "xf06bm-tsrv2.nsls2.bnl.local:4002")
+drvAsynIPPortConfigure("$(PORT2)", "xf06bm-tsrv5.nsls2.bnl.local:4002")
 
 ## Load records
 dbLoadRecords("./db/F460.db", "Sys=$(Sys),Dev=$(Dev),PORT=$(PORT),PINI=YES,BUFSZ=12,PREC=9")
