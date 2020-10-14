@@ -37,6 +37,7 @@ cd ${TOP}/iocBoot/${IOC}/
 < autosave.cmd
 
 dbLoadRecords("/epics/iocs/F460/db/reccaster.db", "P=XF:06BM{F460}RecSync")
+asSetFilename("/epics/common/bl-cas/bl-cas/06bm/default.acf")
 iocInit()
 dbl > ${TOP}/pvs.pvlist
 
