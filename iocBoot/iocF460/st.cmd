@@ -36,6 +36,7 @@ asynSetTraceIOMask("E2",0,9)
 cd ${TOP}/iocBoot/${IOC}/
 < autosave.cmd
 
+dbLoadRecords("/epics/iocs/F460/db/reccaster.db", "P=XF:06BM{F460}RecSync")
 iocInit()
 dbl > ${TOP}/pvs.pvlist
 

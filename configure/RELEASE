@@ -41,6 +41,10 @@ ASYN=/usr/lib/epics
 #STREAM=/opt/epics/modules/stream
 #UIOCSYSTEM=/opt/epics/modules/uIOCSystem
 GENERICSCAN=/opt/epics/modules/genericScan
+# BEGIN ANSIBLE MANAGED BLOCK
+# RecSync support
+RECCASTER=$(EPICS_BASE)
+# END ANSIBLE MANAGED BLOCK
 EPICS_BASE=/usr/lib/epics
 
 # Set RULES here if you want to take build rules from somewhere

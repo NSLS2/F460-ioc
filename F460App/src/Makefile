@@ -15,6 +15,12 @@ DBD += ${PROD_IOC}.dbd
 
 # F460.dbd will be made up from these files:
 ${PROD_IOC}_DBD += base.dbd
+# BEGIN ANSIBLE MANAGED BLOCK
+ifneq ($(RECCASTER),)
+F460_DBD += reccaster.dbd
+F460_LIBS += reccaster
+endif
+# END ANSIBLE MANAGED BLOCK
 ${PROD_IOC}_DBD += sscan.dbd
 ${PROD_IOC}_DBD += calcSupport.dbd
 ${PROD_IOC}_DBD += asSupport.dbd

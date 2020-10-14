@@ -1,8 +1,0 @@
-epicsEnvSet("ARCH","linux-x86_64")
-epicsEnvSet("IOC","iocF460")
-epicsEnvSet("TOP","/home/liji/ioc/F460-sp")
-epicsEnvSet("SUPPORT","/epics/support")
-epicsEnvSet("STREAM","/usr/lib/epics")
-epicsEnvSet("ASYN","/usr/lib/epics")
-epicsEnvSet("GENERICSCAN","/opt/epics/modules/genericScan")
-epicsEnvSet("EPICS_BASE","/usr/lib/epics")

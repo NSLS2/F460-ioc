@@ -15,6 +15,11 @@ DB += F460_channel.template
 DB += F460_pid.template
 DB += F460.db
 DB += asyn.db
+# BEGIN ANSIBLE MANAGED BLOCK
+ifneq ($(RECCASTER),)
+DB_INSTALLS += $(RECCASTER)/db/reccaster.db
+endif
+# END ANSIBLE MANAGED BLOCK
 
 ##foreign modules
 #external module: uIOCsystem
