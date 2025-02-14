@@ -14,3 +14,5 @@ records.dbl
 .bzrignore
 .hg/
 .hgignore
+.vscode/
+records.dbl
