@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-02-14 16:25:19 by dgavrilov-->
+<display version="2.0.0">
+  <name>$(Name) Analogs $(Sys)$(Dev)</name>
+  <macros>
+    <P>E1:F460:</P>
+  </macros>
+  <width>650</width>
+  <height>750</height>
+  <actions>
+  </actions>
+  <grid_step_x>6</grid_step_x>
+  <grid_step_y>6</grid_step_y>
+  <widget type="stripchart" version="2.1.0">
+    <name>XY Graph</name>
+    <x>12</x>
+    <y>72</y>
+    <width>601</width>
+    <height>307</height>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <title_font>
+      <font family="Arial" style="BOLD" size="11.881188118811881">
+      </font>
+    </title_font>
+    <show_legend>true</show_legend>
+    <actions>
+    </actions>
+    <start>3 minute</start>
+    <y_axes>
+      <y_axis>
+        <title>Sensors (I0 and I1)</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>false</show_grid>
+        <visible>true</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+      </y_axis>
+      <y_axis>
+        <title>Sensors (I2 and I3)</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>true</show_grid>
+        <visible>true</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>Current 0</name>
+        <y_pv>$(Sys)$(Dev)Sen:I0-I</y_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="21" green="21" blue="196">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <point_type>0</point_type>
+        <point_size>4</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>Current 1</name>
+        <y_pv>$(Sys)$(Dev)Sen:I1-I</y_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="242" green="26" blue="26">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <point_type>0</point_type>
+        <point_size>4</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>Current 2</name>
+        <y_pv>$(Sys)$(Dev)Sen:I2-I</y_pv>
+        <axis>1</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="33" green="179" blue="33">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <point_type>0</point_type>
+        <point_size>4</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>Current 3</name>
+        <y_pv>$(Sys)$(Dev)Sen:I3-I</y_pv>
+        <axis>1</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="0" green="0" blue="0">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <point_type>0</point_type>
+        <point_size>4</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="stripchart" version="2.1.0">
+    <name>XY Graph_1</name>
+    <x>12</x>
+    <y>426</y>
+    <width>601</width>
+    <height>307</height>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <title_font>
+      <font family="Arial" style="BOLD" size="11.881188118811881">
+      </font>
+    </title_font>
+    <show_legend>true</show_legend>
+    <actions>
+    </actions>
+    <y_axes>
+      <y_axis>
+        <title>Voltages AI1</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>false</show_grid>
+        <visible>true</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+      </y_axis>
+      <y_axis>
+        <title>Voltage AI2</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>0.0</minimum>
+        <maximum>100.0</maximum>
+        <show_grid>true</show_grid>
+        <visible>true</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name>Analog input 0</name>
+        <y_pv>$(Sys)$(Dev)Ana:Ai1</y_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="21" green="21" blue="196">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <point_type>0</point_type>
+        <point_size>4</point_size>
+        <visible>true</visible>
+      </trace>
+      <trace>
+        <name>Analog input 1</name>
+        <y_pv>$(Sys)$(Dev)Ana:Ai2</y_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="242" green="26" blue="26">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <point_type>0</point_type>
+        <point_size>4</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="write_pv">
+        <description>Write PV</description>
+        <pv_name>$(Sys)$(Dev)Cmd:Init</pv_name>
+        <value>1</value>
+      </action>
+    </actions>
+    <pv_name>$(Sys)$(Dev)Cmd:Init</pv_name>
+    <text>Initiate on valid trigger</text>
+    <x>422</x>
+    <y>36</y>
+    <width>185</width>
+    <height>23</height>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Menu Button</name>
+    <pv_name>$(Sys)$(Dev)Cmd:RdSen.SCAN</pv_name>
+    <x>204</x>
+    <y>33</y>
+    <width>190</width>
+    <height>29</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Menu Button_1</name>
+    <pv_name>$(Sys)$(Dev)Cmd:RdAna.SCAN</pv_name>
+    <x>197</x>
+    <y>393</y>
+    <width>190</width>
+    <height>29</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="write_pv">
+        <description>Write PV</description>
+        <pv_name>$(Sys)$(Dev)Cmd:RdSen.PROC</pv_name>
+        <value>1</value>
+      </action>
+    </actions>
+    <pv_name>$(Sys)$(Dev)Cmd:Init</pv_name>
+    <text>Update</text>
+    <x>20</x>
+    <y>36</y>
+    <width>113</width>
+    <height>26</height>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_2</name>
+    <actions>
+      <action type="write_pv">
+        <description>Write PV</description>
+        <pv_name>$(Sys)$(Dev)Cmd:RdAna.PROC</pv_name>
+        <value>1</value>
+      </action>
+    </actions>
+    <pv_name>$(Sys)$(Dev)Cmd:Init</pv_name>
+    <text>Update</text>
+    <x>22</x>
+    <y>393</y>
+    <width>113</width>
+    <height>26</height>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>title</name>
+    <text>$(Name) Analogs [$(Sys)$(Dev)]</text>
+    <width>650</width>
+    <height>29</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="17.821782178217823">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Gray_0" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+</display>
