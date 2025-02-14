@@ -10,8 +10,6 @@ dbLoadDatabase("dbd/F460.dbd",0,0)
 F460_registerRecordDeviceDriver(pdbbase)
 
 ## User defined ENV variables
-epicsEnvSet(HOSTNAME,"F460IOC")
-
 epicsEnvSet("STREAM_PROTOCOL_PATH", "${TOP}/F460App/src")
 epicsEnvSet("Sys", "XF:31ID-ES")
 epicsEnvSet("Dev", "{F460:1}")
@@ -29,7 +27,7 @@ dbLoadRecords("./db/asyn.db", "Sys=$(Sys),Dev=$(Dev),PORT=$(PORT),ADDR=0")
 cd ${TOP}/iocBoot/${IOC}/
 < autosave.cmd
 
-dbLoadRecords("/epics/iocs/F460/db/reccaster.db", "P=XF:06BM{F460}RecSync")
+dbLoadRecords("${TOP}/db/reccaster.db", "P=${Sys}{F460}RecSync")
 iocInit()
 dbl > ${TOP}/records.dbl
 
