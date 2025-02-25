@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-02-14 17:14:13 by dgavrilov-->
+<display version="2.0.0">
+  <name>$(Name) $(Sys)$(Dev)</name>
+  <width>650</width>
+  <height>650</height>
+  <actions>
+  </actions>
+  <grid_step_x>6</grid_step_x>
+  <grid_step_y>6</grid_step_y>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>f460_trigger.bob</file>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text>Trigger settings</text>
+    <x>93</x>
+    <y>56</y>
+    <width>208</width>
+    <height>40</height>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>f460_config.bob</file>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text>Configuration</text>
+    <x>93</x>
+    <y>102</y>
+    <width>208</width>
+    <height>40</height>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_2</name>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>f460_hv.bob</file>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text>High voltage</text>
+    <x>93</x>
+    <y>146</y>
+    <width>208</width>
+    <height>40</height>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_3</name>
+    <actions>
+      <action type="open_display">
+        <description>Open Display</description>
+        <file>f460_pid.bob</file>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text>PID</text>
+    <x>317</x>
+    <y>54</y>
+    <width>208</width>
+    <height>40</height>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Menu Button</name>
+    <actions>
+      <action type="open_display">
+        <description>Channel 0</description>
+        <file>f460_chan.bob</file>
+        <macros>
+          <CH>0</CH>
+        </macros>
+        <target>tab</target>
+      </action>
+      <action type="open_display">
+        <description>Channel 1</description>
+        <file>f460_chan.bob</file>
+        <macros>
+          <CH>1</CH>
+        </macros>
+        <target>tab</target>
+      </action>
+      <action type="open_display">
+        <description>Channel 2</description>
+        <file>f460_chan.bob</file>
+        <macros>
+          <CH>2</CH>
+        </macros>
+        <target>tab</target>
+      </action>
+      <action type="open_display">
+        <description>Channel 3</description>
+        <file>f460_chan.bob</file>
+        <macros>
+          <CH>3</CH>
+        </macros>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text>Channels</text>
+    <x>318</x>
+    <y>146</y>
+    <width>206</width>
+    <height>40</height>
+    <background_color>
+      <color red="240" green="240" blue="240">
+      </color>
+    </background_color>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="stripchart" version="2.1.0">
+    <name>XY Graph</name>
+    <x>38</x>
+    <y>228</y>
+    <width>268</width>
+    <height>157</height>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <show_grid>true</show_grid>
+    <title>I0</title>
+    <title_font>
+      <font family="Arial" style="BOLD" size="11.881188118811881">
+      </font>
+    </title_font>
+    <show_toolbar>false</show_toolbar>
+    <actions>
+    </actions>
+    <start>3 minute</start>
+    <y_axes>
+      <y_axis>
+        <title>Current [A]</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>1.0E-10</minimum>
+        <maximum>1.0E-8</maximum>
+        <show_grid>true</show_grid>
+        <visible>true</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name></name>
+        <y_pv>$(Sys)$(Dev)Cur:I0-I</y_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="21" green="21" blue="196">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <point_type>0</point_type>
+        <point_size>4</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_4</name>
+    <actions>
+      <action type="open_display">
+        <description>Analogs</description>
+        <file>f460_analogs.bob</file>
+        <target>tab</target>
+      </action>
+      <action type="open_display">
+        <description>Inputs</description>
+        <file>f460_inputs.bob</file>
+        <target>tab</target>
+      </action>
+    </actions>
+    <text>Sensors / analog inputs</text>
+    <x>317</x>
+    <y>102</y>
+    <width>208</width>
+    <height>40</height>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="stripchart" version="2.1.0">
+    <name>XY Graph_1</name>
+    <x>317</x>
+    <y>228</y>
+    <width>268</width>
+    <height>157</height>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <show_grid>true</show_grid>
+    <title>I1</title>
+    <title_font>
+      <font family="Arial" style="BOLD" size="11.881188118811881">
+      </font>
+    </title_font>
+    <show_toolbar>false</show_toolbar>
+    <actions>
+    </actions>
+    <start>3 minute</start>
+    <y_axes>
+      <y_axis>
+        <title>Current [A]</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>1.0E-10</minimum>
+        <maximum>1.0E-8</maximum>
+        <show_grid>true</show_grid>
+        <visible>true</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name></name>
+        <y_pv>$(Sys)$(Dev)Cur:I1-I</y_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="21" green="21" blue="196">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <point_type>0</point_type>
+        <point_size>4</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="stripchart" version="2.1.0">
+    <name>XY Graph_2</name>
+    <x>38</x>
+    <y>456</y>
+    <width>268</width>
+    <height>157</height>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <show_grid>true</show_grid>
+    <title>I2</title>
+    <title_font>
+      <font family="Arial" style="BOLD" size="11.881188118811881">
+      </font>
+    </title_font>
+    <show_toolbar>false</show_toolbar>
+    <actions>
+    </actions>
+    <start>3 minute</start>
+    <y_axes>
+      <y_axis>
+        <title>Current [A]</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>1.0E-10</minimum>
+        <maximum>1.0E-8</maximum>
+        <show_grid>true</show_grid>
+        <visible>true</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name></name>
+        <y_pv>$(Sys)$(Dev)Cur:I2-I</y_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="21" green="21" blue="196">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <point_type>0</point_type>
+        <point_size>4</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="stripchart" version="2.1.0">
+    <name>XY Graph_3</name>
+    <x>317</x>
+    <y>456</y>
+    <width>268</width>
+    <height>157</height>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <show_grid>true</show_grid>
+    <title>I3</title>
+    <title_font>
+      <font family="Arial" style="BOLD" size="11.881188118811881">
+      </font>
+    </title_font>
+    <show_toolbar>false</show_toolbar>
+    <actions>
+    </actions>
+    <start>3 minute</start>
+    <y_axes>
+      <y_axis>
+        <title>Current [A]</title>
+        <autoscale>true</autoscale>
+        <log_scale>false</log_scale>
+        <minimum>1.0E-10</minimum>
+        <maximum>1.0E-8</maximum>
+        <show_grid>true</show_grid>
+        <visible>true</visible>
+        <color>
+          <color name="Text" red="0" green="0" blue="0">
+          </color>
+        </color>
+      </y_axis>
+    </y_axes>
+    <traces>
+      <trace>
+        <name></name>
+        <y_pv>$(Sys)$(Dev)Cur:I3-I</y_pv>
+        <axis>0</axis>
+        <trace_type>1</trace_type>
+        <color>
+          <color red="21" green="21" blue="196">
+          </color>
+        </color>
+        <line_width>1</line_width>
+        <point_type>0</point_type>
+        <point_size>4</point_size>
+        <visible>true</visible>
+      </trace>
+    </traces>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <text>Single mode update rate:</text>
+    <x>147</x>
+    <y>199</y>
+    <width>157</width>
+    <height>16</height>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>title</name>
+    <text>F460 [$(Sys)$(Dev)]</text>
+    <width>650</width>
+    <height>29</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="17.821782178217823">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Gray_0" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Combo</name>
+    <pv_name>$(Sys)$(Dev)Cmd:Single.SCAN</pv_name>
+    <x>333</x>
+    <y>194</y>
+    <height>25</height>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>$(Sys)$(Dev)Cur:I0-I</pv_name>
+    <x>144</x>
+    <y>392</y>
+    <width>105</width>
+    <height>21</height>
+    <foreground_color>
+      <color name="Foreground" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="White" red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <format>2</format>
+    <show_units>false</show_units>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>2</border_width>
+    <border_color>
+      <color name="S_ind" red="0" green="177" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_7</name>
+    <text>I0</text>
+    <x>124</x>
+    <y>390</y>
+    <width>19</width>
+    <height>25</height>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>$(Sys)$(Dev)Cur:I1-I</pv_name>
+    <x>418</x>
+    <y>392</y>
+    <width>105</width>
+    <height>21</height>
+    <foreground_color>
+      <color name="Foreground" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="White" red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <format>2</format>
+    <show_units>false</show_units>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>2</border_width>
+    <border_color>
+      <color name="S_ind" red="0" green="177" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_8</name>
+    <text>I1</text>
+    <x>398</x>
+    <y>390</y>
+    <width>19</width>
+    <height>25</height>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_2</name>
+    <pv_name>$(Sys)$(Dev)Cur:I2-I</pv_name>
+    <x>144</x>
+    <y>614</y>
+    <width>105</width>
+    <height>21</height>
+    <foreground_color>
+      <color name="Foreground" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="White" red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <format>2</format>
+    <show_units>false</show_units>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>2</border_width>
+    <border_color>
+      <color name="S_ind" red="0" green="177" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_9</name>
+    <text>I2</text>
+    <x>124</x>
+    <y>612</y>
+    <width>19</width>
+    <height>25</height>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_3</name>
+    <pv_name>$(Sys)$(Dev)Cur:I3-I</pv_name>
+    <x>418</x>
+    <y>614</y>
+    <width>105</width>
+    <height>21</height>
+    <foreground_color>
+      <color name="Foreground" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color name="White" red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <format>2</format>
+    <show_units>false</show_units>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_width>2</border_width>
+    <border_color>
+      <color name="S_ind" red="0" green="177" blue="0">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_10</name>
+    <text>I3</text>
+    <x>398</x>
+    <y>612</y>
+    <width>19</width>
+    <height>25</height>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+</display>

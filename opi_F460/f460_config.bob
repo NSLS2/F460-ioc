@@ -1,0 +1,865 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Saved on 2025-02-14 16:12:50 by dgavrilov-->
+<display version="2.0.0">
+  <name>$(Name) Config $(Sys)$(Dev)</name>
+  <height>650</height>
+  <actions>
+  </actions>
+  <grid_step_x>6</grid_step_x>
+  <grid_step_y>6</grid_step_y>
+  <widget type="tabs" version="2.0.0">
+    <name>Tabbed Container</name>
+    <tabs>
+      <tab>
+        <name>TCP/IP Settings</name>
+        <children>
+          <widget type="group" version="3.0.0">
+            <name>text_rw_group_3</name>
+            <x>12</x>
+            <y>78</y>
+            <width>552</width>
+            <height>22</height>
+            <style>3</style>
+            <foreground_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </foreground_color>
+            <line_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </line_color>
+            <actions>
+            </actions>
+            <widget type="label" version="2.0.0">
+              <name>Label_2</name>
+              <text>(TCP/IP) Log IP</text>
+              <x>32</x>
+              <width>99</width>
+              <height>25</height>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <wrap_words>false</wrap_words>
+              <actions>
+              </actions>
+              <border_color>
+                <color red="0" green="128" blue="255">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>Text Update_2</name>
+              <pv_name>$(Sys)$(Dev)LogIp-I</pv_name>
+              <x>367</x>
+              <width>180</width>
+              <height>25</height>
+              <transparent>true</transparent>
+              <vertical_alignment>1</vertical_alignment>
+              <wrap_words>false</wrap_words>
+              <actions>
+              </actions>
+              <border_color>
+                <color red="0" green="128" blue="255">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="textentry" version="3.0.0">
+              <name>Text Input</name>
+              <pv_name>$(Sys)$(Dev)LogIp-SP</pv_name>
+              <x>194</x>
+              <width>136</width>
+              <height>25</height>
+              <background_color>
+                <color red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <actions>
+              </actions>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_color>
+                <color red="0" green="128" blue="255">
+                </color>
+              </border_color>
+            </widget>
+          </widget>
+          <widget type="group" version="3.0.0">
+            <name>text_rw_group_1</name>
+            <x>12</x>
+            <y>138</y>
+            <width>552</width>
+            <height>22</height>
+            <style>3</style>
+            <foreground_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </foreground_color>
+            <line_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </line_color>
+            <actions>
+            </actions>
+            <widget type="label" version="2.0.0">
+              <name>Label_2</name>
+              <text>(TCP/IP) Gateway</text>
+              <x>32</x>
+              <width>114</width>
+              <height>25</height>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <wrap_words>false</wrap_words>
+              <actions>
+              </actions>
+              <border_color>
+                <color red="0" green="128" blue="255">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>Text Update_2</name>
+              <pv_name>$(Sys)$(Dev)Gate-I</pv_name>
+              <x>367</x>
+              <width>180</width>
+              <height>25</height>
+              <transparent>true</transparent>
+              <vertical_alignment>1</vertical_alignment>
+              <wrap_words>false</wrap_words>
+              <actions>
+              </actions>
+              <border_color>
+                <color red="0" green="128" blue="255">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="textentry" version="3.0.0">
+              <name>Text Input</name>
+              <pv_name>$(Sys)$(Dev)Gate-SP</pv_name>
+              <x>194</x>
+              <width>136</width>
+              <height>25</height>
+              <background_color>
+                <color red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <actions>
+              </actions>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_color>
+                <color red="0" green="128" blue="255">
+                </color>
+              </border_color>
+            </widget>
+          </widget>
+          <widget type="group" version="3.0.0">
+            <name>text_rw_group_2</name>
+            <x>12</x>
+            <y>108</y>
+            <width>552</width>
+            <height>22</height>
+            <style>3</style>
+            <foreground_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </foreground_color>
+            <line_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </line_color>
+            <actions>
+            </actions>
+            <widget type="label" version="2.0.0">
+              <name>Label_2</name>
+              <text>(TCP/IP) Netmask</text>
+              <x>32</x>
+              <width>114</width>
+              <height>25</height>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <wrap_words>false</wrap_words>
+              <actions>
+              </actions>
+              <border_color>
+                <color red="0" green="128" blue="255">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>Text Update_2</name>
+              <pv_name>$(Sys)$(Dev)Netmask-I</pv_name>
+              <x>367</x>
+              <width>180</width>
+              <height>25</height>
+              <transparent>true</transparent>
+              <vertical_alignment>1</vertical_alignment>
+              <wrap_words>false</wrap_words>
+              <actions>
+              </actions>
+              <border_color>
+                <color red="0" green="128" blue="255">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="textentry" version="3.0.0">
+              <name>Text Input</name>
+              <pv_name>$(Sys)$(Dev)Netmask-SP</pv_name>
+              <x>194</x>
+              <width>136</width>
+              <height>25</height>
+              <background_color>
+                <color red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <actions>
+              </actions>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_color>
+                <color red="0" green="128" blue="255">
+                </color>
+              </border_color>
+            </widget>
+          </widget>
+          <widget type="group" version="3.0.0">
+            <name>text_rw_group_2</name>
+            <x>12</x>
+            <y>51</y>
+            <width>552</width>
+            <height>22</height>
+            <style>3</style>
+            <foreground_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </foreground_color>
+            <line_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </line_color>
+            <actions>
+            </actions>
+            <widget type="label" version="2.0.0">
+              <name>Label_2</name>
+              <text>(TCP/IP) IP</text>
+              <x>32</x>
+              <width>72</width>
+              <height>25</height>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <wrap_words>false</wrap_words>
+              <actions>
+              </actions>
+              <border_color>
+                <color red="0" green="128" blue="255">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>Text Update_2</name>
+              <pv_name>$(Sys)$(Dev)Ip-I</pv_name>
+              <x>367</x>
+              <width>180</width>
+              <height>25</height>
+              <transparent>true</transparent>
+              <vertical_alignment>1</vertical_alignment>
+              <wrap_words>false</wrap_words>
+              <actions>
+              </actions>
+              <border_color>
+                <color red="0" green="128" blue="255">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="textentry" version="3.0.0">
+              <name>Text Input</name>
+              <pv_name>$(Sys)$(Dev)Ip-SP</pv_name>
+              <x>194</x>
+              <width>136</width>
+              <height>25</height>
+              <background_color>
+                <color red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <actions>
+              </actions>
+              <border_alarm_sensitive>false</border_alarm_sensitive>
+              <border_color>
+                <color red="0" green="128" blue="255">
+                </color>
+              </border_color>
+            </widget>
+          </widget>
+          <widget type="group" version="3.0.0">
+            <name>menu_rw_group_2</name>
+            <x>12</x>
+            <y>12</y>
+            <width>552</width>
+            <height>31</height>
+            <style>3</style>
+            <foreground_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </foreground_color>
+            <line_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </line_color>
+            <actions>
+            </actions>
+            <widget type="label" version="2.0.0">
+              <name>Label_2</name>
+              <text>(TCP/IP) IP mode</text>
+              <x>32</x>
+              <y>4</y>
+              <width>111</width>
+              <height>16</height>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <wrap_words>false</wrap_words>
+              <actions>
+              </actions>
+              <border_color>
+                <color red="0" green="128" blue="255">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>Text Update_2</name>
+              <pv_name>$(Sys)$(Dev)Ipmode-I</pv_name>
+              <x>367</x>
+              <width>180</width>
+              <transparent>true</transparent>
+              <vertical_alignment>1</vertical_alignment>
+              <wrap_words>false</wrap_words>
+              <actions>
+              </actions>
+              <border_color>
+                <color red="0" green="128" blue="255">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="combo" version="2.0.0">
+              <name>Combo</name>
+              <pv_name>$(Sys)$(Dev)IpMode-SP</pv_name>
+              <x>194</x>
+              <width>136</width>
+              <height>27</height>
+              <background_color>
+                <color red="255" green="255" blue="255">
+                </color>
+              </background_color>
+              <actions>
+              </actions>
+            </widget>
+          </widget>
+        </children>
+      </tab>
+    </tabs>
+    <x>12</x>
+    <y>300</y>
+    <width>571</width>
+    <height>204</height>
+    <tab_height>10</tab_height>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="tabs" version="2.0.0">
+    <name>Tabbed Container_1</name>
+    <tabs>
+      <tab>
+        <name>Version</name>
+        <children>
+          <widget type="group" version="3.0.0">
+            <name>text_ro_group_2</name>
+            <x>12</x>
+            <y>43</y>
+            <width>541</width>
+            <height>20</height>
+            <style>3</style>
+            <foreground_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </foreground_color>
+            <line_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </line_color>
+            <actions>
+            </actions>
+            <widget type="label" version="2.0.0">
+              <name>Label_1</name>
+              <text>Model number</text>
+              <x>32</x>
+              <y>4</y>
+              <width>90</width>
+              <height>16</height>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <wrap_words>false</wrap_words>
+              <actions>
+              </actions>
+              <border_color>
+                <color red="0" green="128" blue="255">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>Text Update_1</name>
+              <pv_name>$(Sys)$(Dev)Model-I</pv_name>
+              <x>367</x>
+              <width>180</width>
+              <transparent>true</transparent>
+              <vertical_alignment>1</vertical_alignment>
+              <wrap_words>false</wrap_words>
+              <actions>
+              </actions>
+              <border_color>
+                <color red="0" green="128" blue="255">
+                </color>
+              </border_color>
+            </widget>
+          </widget>
+          <widget type="group" version="3.0.0">
+            <name>text_ro_group_2</name>
+            <x>12</x>
+            <y>18</y>
+            <width>541</width>
+            <height>20</height>
+            <style>3</style>
+            <foreground_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </foreground_color>
+            <line_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </line_color>
+            <actions>
+            </actions>
+            <widget type="label" version="2.0.0">
+              <name>Label_1</name>
+              <text>Firmware revision</text>
+              <x>32</x>
+              <y>4</y>
+              <width>111</width>
+              <height>16</height>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <wrap_words>false</wrap_words>
+              <actions>
+              </actions>
+              <border_color>
+                <color red="0" green="128" blue="255">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>Text Update_1</name>
+              <pv_name>$(Sys)$(Dev)Firmware-I</pv_name>
+              <x>367</x>
+              <width>180</width>
+              <transparent>true</transparent>
+              <vertical_alignment>1</vertical_alignment>
+              <wrap_words>false</wrap_words>
+              <actions>
+              </actions>
+              <border_color>
+                <color red="0" green="128" blue="255">
+                </color>
+              </border_color>
+            </widget>
+          </widget>
+          <widget type="group" version="3.0.0">
+            <name>text_ro_group_2</name>
+            <x>12</x>
+            <y>68</y>
+            <width>541</width>
+            <height>20</height>
+            <style>3</style>
+            <foreground_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </foreground_color>
+            <line_color>
+              <color red="0" green="128" blue="255">
+              </color>
+            </line_color>
+            <actions>
+            </actions>
+            <widget type="label" version="2.0.0">
+              <name>Label_1</name>
+              <text>Serial number</text>
+              <x>32</x>
+              <y>4</y>
+              <width>88</width>
+              <height>16</height>
+              <horizontal_alignment>1</horizontal_alignment>
+              <vertical_alignment>1</vertical_alignment>
+              <auto_size>true</auto_size>
+              <wrap_words>false</wrap_words>
+              <actions>
+              </actions>
+              <border_color>
+                <color red="0" green="128" blue="255">
+                </color>
+              </border_color>
+            </widget>
+            <widget type="textupdate" version="2.0.0">
+              <name>Text Update_1</name>
+              <pv_name>$(Sys)$(Dev)Serial-I</pv_name>
+              <x>367</x>
+              <width>180</width>
+              <transparent>true</transparent>
+              <vertical_alignment>1</vertical_alignment>
+              <wrap_words>false</wrap_words>
+              <actions>
+              </actions>
+              <border_color>
+                <color red="0" green="128" blue="255">
+                </color>
+              </border_color>
+            </widget>
+          </widget>
+        </children>
+      </tab>
+    </tabs>
+    <x>12</x>
+    <y>162</y>
+    <width>571</width>
+    <height>129</height>
+    <tab_height>10</tab_height>
+    <actions>
+    </actions>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Grouping Container</name>
+    <x>12</x>
+    <y>48</y>
+    <width>673</width>
+    <height>91</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+    <widget type="group" version="3.0.0">
+      <name>text_ro_group_2</name>
+      <width>541</width>
+      <height>44</height>
+      <style>3</style>
+      <foreground_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <widget type="label" version="2.0.0">
+        <name>Label_1</name>
+        <text>Last error</text>
+        <x>32</x>
+        <y>4</y>
+        <width>60</width>
+        <height>16</height>
+        <background_color>
+          <color red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_1</name>
+        <pv_name>$(Sys)$(Dev)ErrCode-Sts</pv_name>
+        <x>300</x>
+        <y>3</y>
+        <width>54</width>
+        <background_color>
+          <color red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <transparent>true</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_1</name>
+        <pv_name>$(Sys)$(Dev)ErrDesc-Sts</pv_name>
+        <x>378</x>
+        <y>3</y>
+        <width>229</width>
+        <height>40</height>
+        <background_color>
+          <color red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <transparent>true</transparent>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+    </widget>
+    <widget type="group" version="3.0.0">
+      <name>text_ro_group_2</name>
+      <y>48</y>
+      <width>541</width>
+      <height>31</height>
+      <style>3</style>
+      <foreground_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </foreground_color>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
+      <actions>
+      </actions>
+      <widget type="label" version="2.0.0">
+        <name>Label_1</name>
+        <text>Unacknowledged errors</text>
+        <x>32</x>
+        <y>4</y>
+        <width>148</width>
+        <height>16</height>
+        <background_color>
+          <color red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+        <auto_size>true</auto_size>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>Text Update_1</name>
+        <pv_name>$(Sys)$(Dev)ErrCount-I</pv_name>
+        <x>378</x>
+        <y>3</y>
+        <width>180</width>
+        <background_color>
+          <color red="255" green="255" blue="255">
+          </color>
+        </background_color>
+        <transparent>true</transparent>
+        <vertical_alignment>1</vertical_alignment>
+        <wrap_words>false</wrap_words>
+        <actions>
+        </actions>
+        <border_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </border_color>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>Action Button</name>
+        <actions>
+          <action type="write_pv">
+            <description>Write PV</description>
+            <pv_name>$(Sys)$(Dev)Cmd:AckErr</pv_name>
+            <value>1</value>
+          </action>
+        </actions>
+        <text>OK</text>
+        <x>300</x>
+        <y>1</y>
+        <width>55</width>
+        <height>24</height>
+        <tooltip>$(actions)</tooltip>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>text_rw_group_2</name>
+    <x>22</x>
+    <y>516</y>
+    <width>552</width>
+    <height>22</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <actions>
+    </actions>
+    <widget type="textupdate" version="2.0.0">
+      <name>Text Update_2</name>
+      <pv_name>$(Sys)$(Dev)Timeout-I</pv_name>
+      <x>367</x>
+      <width>180</width>
+      <height>25</height>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+      <vertical_alignment>1</vertical_alignment>
+      <wrap_words>false</wrap_words>
+      <actions>
+      </actions>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Input</name>
+      <pv_name>$(Sys)$(Dev)Timeout-SP</pv_name>
+      <x>194</x>
+      <width>136</width>
+      <height>25</height>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+      <precision>3</precision>
+      <actions>
+      </actions>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+      <border_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </border_color>
+    </widget>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="write_pv">
+        <description>Write PV</description>
+        <pv_name>$(Sys)$(Dev)Cmd:Save</pv_name>
+        <value>1</value>
+      </action>
+    </actions>
+    <text>Save state to flash</text>
+    <x>631</x>
+    <y>78</y>
+    <width>162</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="write_pv">
+        <description>Write PV</description>
+        <pv_name>$(Sys)$(Dev)Cmd:Reset</pv_name>
+        <value>1</value>
+      </action>
+    </actions>
+    <text>Reset device</text>
+    <x>630</x>
+    <y>48</y>
+    <width>162</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_2</name>
+    <actions>
+      <action type="write_pv">
+        <description>Write PV</description>
+        <pv_name>$(Sys)$(Dev)Cmd:Recall</pv_name>
+        <value>1</value>
+      </action>
+    </actions>
+    <text>Recall state from flash</text>
+    <x>631</x>
+    <y>108</y>
+    <width>162</width>
+    <height>22</height>
+    <tooltip>$(actions)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>title</name>
+    <text>$(Name) Configuration [$(Sys)$(Dev)]</text>
+    <width>800</width>
+    <height>29</height>
+    <font>
+      <font family="Sans" style="REGULAR" size="17.821782178217823">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="Gray_0" red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <transparent>false</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <text>Comm timeout</text>
+    <x>54</x>
+    <y>519</y>
+    <width>92</width>
+    <height>25</height>
+    <background_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <auto_size>true</auto_size>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+</display>

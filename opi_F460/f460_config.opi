@@ -5,7 +5,7 @@
     <include_parent_macros>true</include_parent_macros>
   </macros>
   <wuid>7c32a782:1416f6861e0:d89</wuid>
-  <boy_version>3.2.10.201310251012</boy_version>
+  <boy_version>3.2.18.201410011619</boy_version>
   <scripts />
   <show_ruler>true</show_ruler>
   <height>650</height>
@@ -32,145 +32,6 @@
   <actions hook="false" hook_all="false" />
   <y>-1</y>
   <x>-1</x>
-  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
-    <macros>
-      <include_parent_macros>true</include_parent_macros>
-    </macros>
-    <visible>true</visible>
-    <wuid>7c32a782:1416f6861e0:15ff</wuid>
-    <scripts />
-    <height>25</height>
-    <name>title_group_1</name>
-    <scale_options>
-      <width_scalable>true</width_scalable>
-      <height_scalable>true</height_scalable>
-      <keep_wh_ratio>false</keep_wh_ratio>
-    </scale_options>
-    <transparent>false</transparent>
-    <show_scrollbar>false</show_scrollbar>
-    <foreground_color>
-      <color red="192" green="192" blue="192" />
-    </foreground_color>
-    <background_color>
-      <color red="240" green="240" blue="240" />
-    </background_color>
-    <enabled>true</enabled>
-    <widget_type>Grouping Container</widget_type>
-    <font>
-      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
-    </font>
-    <width>800</width>
-    <border_style>0</border_style>
-    <rules />
-    <fc>false</fc>
-    <lock_children>false</lock_children>
-    <border_width>1</border_width>
-    <border_color>
-      <color red="0" green="128" blue="255" />
-    </border_color>
-    <y>0</y>
-    <actions hook="false" hook_all="false" />
-    <x>0</x>
-    <tooltip></tooltip>
-    <widget typeId="org.csstudio.opibuilder.widgets.Rectangle" version="1.0.0">
-      <border_alarm_sensitive>false</border_alarm_sensitive>
-      <visible>true</visible>
-      <fill_level>100.0</fill_level>
-      <line_color>
-        <color red="128" green="0" blue="255" />
-      </line_color>
-      <wuid>7c32a782:1416f6861e0:155a</wuid>
-      <bg_gradient_color>
-        <color red="255" green="255" blue="255" />
-      </bg_gradient_color>
-      <scripts />
-      <height>25</height>
-      <anti_alias>true</anti_alias>
-      <name>Rectangle</name>
-      <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
-      <alpha>255</alpha>
-      <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <transparent>false</transparent>
-      <pv_name></pv_name>
-      <background_color>
-        <color red="0" green="0" blue="255" />
-      </background_color>
-      <foreground_color>
-        <color name="ioc_read_fg" red="10" green="0" blue="184" />
-      </foreground_color>
-      <widget_type>Rectangle</widget_type>
-      <enabled>true</enabled>
-      <fg_gradient_color>
-        <color red="255" green="255" blue="255" />
-      </fg_gradient_color>
-      <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
-      <font>
-        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
-      </font>
-      <width>800</width>
-      <line_style>0</line_style>
-      <border_style>0</border_style>
-      <rules />
-      <pv_value />
-      <border_width>1</border_width>
-      <line_width>0</line_width>
-      <horizontal_fill>true</horizontal_fill>
-      <border_color>
-        <color red="0" green="128" blue="255" />
-      </border_color>
-      <actions hook="false" hook_all="false" />
-      <y>0</y>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-      <x>0</x>
-      <gradient>false</gradient>
-    </widget>
-    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
-      <visible>true</visible>
-      <vertical_alignment>1</vertical_alignment>
-      <wuid>7c32a782:1416f6861e0:155b</wuid>
-      <auto_size>false</auto_size>
-      <scripts />
-      <height>22</height>
-      <name>title</name>
-      <scale_options>
-        <width_scalable>true</width_scalable>
-        <height_scalable>true</height_scalable>
-        <keep_wh_ratio>false</keep_wh_ratio>
-      </scale_options>
-      <transparent>true</transparent>
-      <show_scrollbar>false</show_scrollbar>
-      <background_color>
-        <color red="255" green="255" blue="255" />
-      </background_color>
-      <foreground_color>
-        <color name="Gray_0" red="255" green="255" blue="255" />
-      </foreground_color>
-      <widget_type>Label</widget_type>
-      <enabled>true</enabled>
-      <text>F460 Configuration [$(P)]</text>
-      <font>
-        <fontdata fontName="Sans" height="18" style="0" />
-      </font>
-      <width>772</width>
-      <border_style>0</border_style>
-      <rules />
-      <border_width>1</border_width>
-      <border_color>
-        <color red="0" green="128" blue="255" />
-      </border_color>
-      <horizontal_alignment>1</horizontal_alignment>
-      <actions hook="false" hook_all="false" />
-      <y>2</y>
-      <wrap_words>true</wrap_words>
-      <tooltip></tooltip>
-      <x>3</x>
-    </widget>
-  </widget>
   <widget typeId="org.csstudio.opibuilder.widgets.tab" version="1.0.0">
     <macros>
       <include_parent_macros>true</include_parent_macros>
@@ -180,7 +41,7 @@ $(pv_value)</tooltip>
     <border_style>0</border_style>
     <wuid>4e624333:1420f1fd232:-73d3</wuid>
     <tab_0_background_color>
-      <color red="255" green="255" blue="255" />
+      <color red="240" green="240" blue="240" />
     </tab_0_background_color>
     <foreground_color>
       <color red="192" green="192" blue="192" />
@@ -215,7 +76,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <tab_0_icon_path></tab_0_icon_path>
     <tab_0_font>
-      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
     </tab_0_font>
     <rules />
     <tab_count>1</tab_count>
@@ -227,7 +88,7 @@ $(pv_value)</tooltip>
       <visible>true</visible>
       <wuid>4e624333:1420f1fd232:-73d2</wuid>
       <scripts />
-      <height>173</height>
+      <height>175</height>
       <name>TCP/IP Settings</name>
       <scale_options>
         <width_scalable>true</width_scalable>
@@ -245,7 +106,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <widget_type>Grouping Container</widget_type>
       <font>
-        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
       </font>
       <width>569</width>
       <border_style>0</border_style>
@@ -280,12 +141,12 @@ $(pv_value)</tooltip>
           <color red="192" green="192" blue="192" />
         </foreground_color>
         <background_color>
-          <color red="255" green="255" blue="255" />
+          <color red="240" green="240" blue="240" />
         </background_color>
         <enabled>true</enabled>
         <widget_type>Grouping Container</widget_type>
         <font>
-          <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+          <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
         </font>
         <width>552</width>
         <border_style>0</border_style>
@@ -306,7 +167,7 @@ $(pv_value)</tooltip>
           <wuid>4e624333:1420f1fd232:-72ae</wuid>
           <auto_size>true</auto_size>
           <scripts />
-          <height>17</height>
+          <height>15</height>
           <name>Label_2</name>
           <scale_options>
             <width_scalable>true</width_scalable>
@@ -315,7 +176,7 @@ $(pv_value)</tooltip>
           </scale_options>
           <transparent>true</transparent>
           <background_color>
-            <color red="255" green="255" blue="255" />
+            <color red="240" green="240" blue="240" />
           </background_color>
           <foreground_color>
             <color red="0" green="0" blue="0" />
@@ -324,9 +185,9 @@ $(pv_value)</tooltip>
           <enabled>true</enabled>
           <text>(TCP/IP) Log IP</text>
           <font>
-            <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+            <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
           </font>
-          <width>90</width>
+          <width>81</width>
           <border_style>0</border_style>
           <rules />
           <border_width>1</border_width>
@@ -360,9 +221,9 @@ $(pv_value)</tooltip>
           <format_type>0</format_type>
           <precision_from_pv>true</precision_from_pv>
           <transparent>true</transparent>
-          <pv_name>$(P)LOG_IP_IN</pv_name>
+          <pv_name>$(Sys)$(Dev)LogIp-I</pv_name>
           <background_color>
-            <color red="255" green="255" blue="255" />
+            <color red="240" green="240" blue="240" />
           </background_color>
           <foreground_color>
             <color red="0" green="0" blue="0" />
@@ -373,7 +234,7 @@ $(pv_value)</tooltip>
           <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
           <precision>0</precision>
           <font>
-            <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+            <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
           </font>
           <width>180</width>
           <border_style>0</border_style>
@@ -407,14 +268,14 @@ $(pv_value)</tooltip>
           <widget_type>Text Input</widget_type>
           <text></text>
           <font>
-            <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+            <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
           </font>
           <width>136</width>
           <border_style>3</border_style>
           <pv_value />
-          <maximum>Infinity</maximum>
+          <maximum>1.7976931348623157E308</maximum>
           <border_width>1</border_width>
-          <minimum>-Infinity</minimum>
+          <minimum>-1.7976931348623157E308</minimum>
           <show_units>true</show_units>
           <wuid>4e624333:1420f1fd232:-72ac</wuid>
           <rotation_angle>0.0</rotation_angle>
@@ -428,7 +289,7 @@ $(pv_value)</tooltip>
           </scale_options>
           <selector_type>0</selector_type>
           <transparent>false</transparent>
-          <pv_name>$(P)LOG_IP_OUT</pv_name>
+          <pv_name>$(Sys)$(Dev)LogIp-SP</pv_name>
           <foreground_color>
             <color red="0" green="0" blue="0" />
           </foreground_color>
@@ -468,12 +329,12 @@ $(pv_value)</tooltip>
           <color red="192" green="192" blue="192" />
         </foreground_color>
         <background_color>
-          <color red="255" green="255" blue="255" />
+          <color red="240" green="240" blue="240" />
         </background_color>
         <enabled>true</enabled>
         <widget_type>Grouping Container</widget_type>
         <font>
-          <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+          <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
         </font>
         <width>552</width>
         <border_style>0</border_style>
@@ -494,7 +355,7 @@ $(pv_value)</tooltip>
           <wuid>4e624333:1420f1fd232:-72bb</wuid>
           <auto_size>true</auto_size>
           <scripts />
-          <height>17</height>
+          <height>15</height>
           <name>Label_2</name>
           <scale_options>
             <width_scalable>true</width_scalable>
@@ -503,7 +364,7 @@ $(pv_value)</tooltip>
           </scale_options>
           <transparent>true</transparent>
           <background_color>
-            <color red="255" green="255" blue="255" />
+            <color red="240" green="240" blue="240" />
           </background_color>
           <foreground_color>
             <color red="0" green="0" blue="0" />
@@ -512,9 +373,9 @@ $(pv_value)</tooltip>
           <enabled>true</enabled>
           <text>(TCP/IP) Gateway</text>
           <font>
-            <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+            <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
           </font>
-          <width>107</width>
+          <width>93</width>
           <border_style>0</border_style>
           <rules />
           <border_width>1</border_width>
@@ -548,9 +409,9 @@ $(pv_value)</tooltip>
           <format_type>0</format_type>
           <precision_from_pv>true</precision_from_pv>
           <transparent>true</transparent>
-          <pv_name>$(P)GATE_IN</pv_name>
+          <pv_name>$(Sys)$(Dev)Gate-I</pv_name>
           <background_color>
-            <color red="255" green="255" blue="255" />
+            <color red="240" green="240" blue="240" />
           </background_color>
           <foreground_color>
             <color red="0" green="0" blue="0" />
@@ -561,7 +422,7 @@ $(pv_value)</tooltip>
           <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
           <precision>0</precision>
           <font>
-            <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+            <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
           </font>
           <width>180</width>
           <border_style>0</border_style>
@@ -595,14 +456,14 @@ $(pv_value)</tooltip>
           <widget_type>Text Input</widget_type>
           <text></text>
           <font>
-            <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+            <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
           </font>
           <width>136</width>
           <border_style>3</border_style>
           <pv_value />
-          <maximum>Infinity</maximum>
+          <maximum>1.7976931348623157E308</maximum>
           <border_width>1</border_width>
-          <minimum>-Infinity</minimum>
+          <minimum>-1.7976931348623157E308</minimum>
           <show_units>true</show_units>
           <wuid>4e624333:1420f1fd232:-72b9</wuid>
           <rotation_angle>0.0</rotation_angle>
@@ -616,7 +477,7 @@ $(pv_value)</tooltip>
           </scale_options>
           <selector_type>0</selector_type>
           <transparent>false</transparent>
-          <pv_name>$(P)GATE_OUT</pv_name>
+          <pv_name>$(Sys)$(Dev)Gate-SP</pv_name>
           <foreground_color>
             <color red="0" green="0" blue="0" />
           </foreground_color>
@@ -656,12 +517,12 @@ $(pv_value)</tooltip>
           <color red="192" green="192" blue="192" />
         </foreground_color>
         <background_color>
-          <color red="255" green="255" blue="255" />
+          <color red="240" green="240" blue="240" />
         </background_color>
         <enabled>true</enabled>
         <widget_type>Grouping Container</widget_type>
         <font>
-          <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+          <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
         </font>
         <width>552</width>
         <border_style>0</border_style>
@@ -682,7 +543,7 @@ $(pv_value)</tooltip>
           <wuid>4e624333:1420f1fd232:-72c0</wuid>
           <auto_size>true</auto_size>
           <scripts />
-          <height>17</height>
+          <height>15</height>
           <name>Label_2</name>
           <scale_options>
             <width_scalable>true</width_scalable>
@@ -691,7 +552,7 @@ $(pv_value)</tooltip>
           </scale_options>
           <transparent>true</transparent>
           <background_color>
-            <color red="255" green="255" blue="255" />
+            <color red="240" green="240" blue="240" />
           </background_color>
           <foreground_color>
             <color red="0" green="0" blue="0" />
@@ -700,9 +561,9 @@ $(pv_value)</tooltip>
           <enabled>true</enabled>
           <text>(TCP/IP) Netmask</text>
           <font>
-            <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+            <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
           </font>
-          <width>110</width>
+          <width>95</width>
           <border_style>0</border_style>
           <rules />
           <border_width>1</border_width>
@@ -736,9 +597,9 @@ $(pv_value)</tooltip>
           <format_type>0</format_type>
           <precision_from_pv>true</precision_from_pv>
           <transparent>true</transparent>
-          <pv_name>$(P)NETMASK_IN</pv_name>
+          <pv_name>$(Sys)$(Dev)Netmask-I</pv_name>
           <background_color>
-            <color red="255" green="255" blue="255" />
+            <color red="240" green="240" blue="240" />
           </background_color>
           <foreground_color>
             <color red="0" green="0" blue="0" />
@@ -749,7 +610,7 @@ $(pv_value)</tooltip>
           <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
           <precision>0</precision>
           <font>
-            <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+            <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
           </font>
           <width>180</width>
           <border_style>0</border_style>
@@ -783,14 +644,14 @@ $(pv_value)</tooltip>
           <widget_type>Text Input</widget_type>
           <text></text>
           <font>
-            <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+            <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
           </font>
           <width>136</width>
           <border_style>3</border_style>
           <pv_value />
-          <maximum>Infinity</maximum>
+          <maximum>1.7976931348623157E308</maximum>
           <border_width>1</border_width>
-          <minimum>-Infinity</minimum>
+          <minimum>-1.7976931348623157E308</minimum>
           <show_units>true</show_units>
           <wuid>4e624333:1420f1fd232:-72be</wuid>
           <rotation_angle>0.0</rotation_angle>
@@ -804,7 +665,7 @@ $(pv_value)</tooltip>
           </scale_options>
           <selector_type>0</selector_type>
           <transparent>false</transparent>
-          <pv_name>$(P)NETMASK_OUT</pv_name>
+          <pv_name>$(Sys)$(Dev)Netmask-SP</pv_name>
           <foreground_color>
             <color red="0" green="0" blue="0" />
           </foreground_color>
@@ -844,12 +705,12 @@ $(pv_value)</tooltip>
           <color red="192" green="192" blue="192" />
         </foreground_color>
         <background_color>
-          <color red="255" green="255" blue="255" />
+          <color red="240" green="240" blue="240" />
         </background_color>
         <enabled>true</enabled>
         <widget_type>Grouping Container</widget_type>
         <font>
-          <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+          <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
         </font>
         <width>552</width>
         <border_style>0</border_style>
@@ -870,7 +731,7 @@ $(pv_value)</tooltip>
           <wuid>4e624333:1420f1fd232:-72b3</wuid>
           <auto_size>true</auto_size>
           <scripts />
-          <height>17</height>
+          <height>15</height>
           <name>Label_2</name>
           <scale_options>
             <width_scalable>true</width_scalable>
@@ -879,7 +740,7 @@ $(pv_value)</tooltip>
           </scale_options>
           <transparent>true</transparent>
           <background_color>
-            <color red="255" green="255" blue="255" />
+            <color red="240" green="240" blue="240" />
           </background_color>
           <foreground_color>
             <color red="0" green="0" blue="0" />
@@ -888,9 +749,9 @@ $(pv_value)</tooltip>
           <enabled>true</enabled>
           <text>(TCP/IP) IP</text>
           <font>
-            <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+            <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
           </font>
-          <width>63</width>
+          <width>58</width>
           <border_style>0</border_style>
           <rules />
           <border_width>1</border_width>
@@ -924,9 +785,9 @@ $(pv_value)</tooltip>
           <format_type>0</format_type>
           <precision_from_pv>true</precision_from_pv>
           <transparent>true</transparent>
-          <pv_name>$(P)IP_IN</pv_name>
+          <pv_name>$(Sys)$(Dev)Ip-I</pv_name>
           <background_color>
-            <color red="255" green="255" blue="255" />
+            <color red="240" green="240" blue="240" />
           </background_color>
           <foreground_color>
             <color red="0" green="0" blue="0" />
@@ -937,7 +798,7 @@ $(pv_value)</tooltip>
           <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
           <precision>0</precision>
           <font>
-            <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+            <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
           </font>
           <width>180</width>
           <border_style>0</border_style>
@@ -971,14 +832,14 @@ $(pv_value)</tooltip>
           <widget_type>Text Input</widget_type>
           <text></text>
           <font>
-            <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+            <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
           </font>
           <width>136</width>
           <border_style>3</border_style>
           <pv_value />
-          <maximum>Infinity</maximum>
+          <maximum>1.7976931348623157E308</maximum>
           <border_width>1</border_width>
-          <minimum>-Infinity</minimum>
+          <minimum>-1.7976931348623157E308</minimum>
           <show_units>true</show_units>
           <wuid>4e624333:1420f1fd232:-72b1</wuid>
           <rotation_angle>0.0</rotation_angle>
@@ -992,7 +853,7 @@ $(pv_value)</tooltip>
           </scale_options>
           <selector_type>0</selector_type>
           <transparent>false</transparent>
-          <pv_name>$(P)IP_OUT</pv_name>
+          <pv_name>$(Sys)$(Dev)Ip-SP</pv_name>
           <foreground_color>
             <color red="0" green="0" blue="0" />
           </foreground_color>
@@ -1032,12 +893,12 @@ $(pv_value)</tooltip>
           <color red="192" green="192" blue="192" />
         </foreground_color>
         <background_color>
-          <color red="255" green="255" blue="255" />
+          <color red="240" green="240" blue="240" />
         </background_color>
         <enabled>true</enabled>
         <widget_type>Grouping Container</widget_type>
         <font>
-          <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+          <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
         </font>
         <width>552</width>
         <border_style>0</border_style>
@@ -1058,7 +919,7 @@ $(pv_value)</tooltip>
           <wuid>7c32a782:1416f6861e0:198d</wuid>
           <auto_size>true</auto_size>
           <scripts />
-          <height>17</height>
+          <height>15</height>
           <name>Label_2</name>
           <scale_options>
             <width_scalable>true</width_scalable>
@@ -1067,7 +928,7 @@ $(pv_value)</tooltip>
           </scale_options>
           <transparent>true</transparent>
           <background_color>
-            <color red="255" green="255" blue="255" />
+            <color red="240" green="240" blue="240" />
           </background_color>
           <foreground_color>
             <color red="0" green="0" blue="0" />
@@ -1076,9 +937,9 @@ $(pv_value)</tooltip>
           <enabled>true</enabled>
           <text>(TCP/IP) IP mode</text>
           <font>
-            <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+            <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
           </font>
-          <width>104</width>
+          <width>92</width>
           <border_style>0</border_style>
           <rules />
           <border_width>1</border_width>
@@ -1112,9 +973,9 @@ $(pv_value)</tooltip>
           <format_type>0</format_type>
           <precision_from_pv>true</precision_from_pv>
           <transparent>true</transparent>
-          <pv_name>$(P)IPMODE_IN</pv_name>
+          <pv_name>$(Sys)$(Dev)Ipmode-I</pv_name>
           <background_color>
-            <color red="255" green="255" blue="255" />
+            <color red="240" green="240" blue="240" />
           </background_color>
           <foreground_color>
             <color red="0" green="0" blue="0" />
@@ -1125,7 +986,7 @@ $(pv_value)</tooltip>
           <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
           <precision>0</precision>
           <font>
-            <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+            <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
           </font>
           <width>180</width>
           <border_style>0</border_style>
@@ -1148,7 +1009,7 @@ $(pv_value)</tooltip>
           <visible>true</visible>
           <wuid>7c32a782:1416f6861e0:1e6d</wuid>
           <scripts />
-          <height>29</height>
+          <height>27</height>
           <name>Combo</name>
           <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
           <scale_options>
@@ -1156,7 +1017,7 @@ $(pv_value)</tooltip>
             <height_scalable>true</height_scalable>
             <keep_wh_ratio>false</keep_wh_ratio>
           </scale_options>
-          <pv_name>$(P)IPMODE_OUT</pv_name>
+          <pv_name>$(Sys)$(Dev)IpMode-SP</pv_name>
           <background_color>
             <color red="255" green="255" blue="255" />
           </background_color>
@@ -1167,7 +1028,7 @@ $(pv_value)</tooltip>
           <enabled>true</enabled>
           <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
           <font>
-            <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+            <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
           </font>
           <width>136</width>
           <border_style>0</border_style>
@@ -1196,7 +1057,7 @@ $(pv_value)</tooltip>
     <border_style>0</border_style>
     <wuid>4e624333:1420f1fd232:-6f35</wuid>
     <tab_0_background_color>
-      <color red="255" green="255" blue="255" />
+      <color red="240" green="240" blue="240" />
     </tab_0_background_color>
     <foreground_color>
       <color red="192" green="192" blue="192" />
@@ -1231,7 +1092,7 @@ $(pv_value)</tooltip>
     </scale_options>
     <tab_0_icon_path></tab_0_icon_path>
     <tab_0_font>
-      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
     </tab_0_font>
     <rules />
     <tab_count>1</tab_count>
@@ -1243,7 +1104,7 @@ $(pv_value)</tooltip>
       <visible>true</visible>
       <wuid>4e624333:1420f1fd232:-6f34</wuid>
       <scripts />
-      <height>98</height>
+      <height>100</height>
       <name>Version</name>
       <scale_options>
         <width_scalable>true</width_scalable>
@@ -1261,7 +1122,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <widget_type>Grouping Container</widget_type>
       <font>
-        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
       </font>
       <width>569</width>
       <border_style>0</border_style>
@@ -1296,12 +1157,12 @@ $(pv_value)</tooltip>
           <color red="192" green="192" blue="192" />
         </foreground_color>
         <background_color>
-          <color red="255" green="255" blue="255" />
+          <color red="240" green="240" blue="240" />
         </background_color>
         <enabled>true</enabled>
         <widget_type>Grouping Container</widget_type>
         <font>
-          <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+          <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
         </font>
         <width>541</width>
         <border_style>0</border_style>
@@ -1322,7 +1183,7 @@ $(pv_value)</tooltip>
           <wuid>7c32a782:1416f6861e0:13b5</wuid>
           <auto_size>true</auto_size>
           <scripts />
-          <height>17</height>
+          <height>15</height>
           <name>Label_1</name>
           <scale_options>
             <width_scalable>true</width_scalable>
@@ -1331,7 +1192,7 @@ $(pv_value)</tooltip>
           </scale_options>
           <transparent>true</transparent>
           <background_color>
-            <color red="255" green="255" blue="255" />
+            <color red="240" green="240" blue="240" />
           </background_color>
           <foreground_color>
             <color red="0" green="0" blue="0" />
@@ -1340,9 +1201,9 @@ $(pv_value)</tooltip>
           <enabled>true</enabled>
           <text>Model number</text>
           <font>
-            <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+            <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
           </font>
-          <width>92</width>
+          <width>79</width>
           <border_style>0</border_style>
           <rules />
           <border_width>1</border_width>
@@ -1376,9 +1237,9 @@ $(pv_value)</tooltip>
           <format_type>0</format_type>
           <precision_from_pv>true</precision_from_pv>
           <transparent>true</transparent>
-          <pv_name>$(P)MODEL</pv_name>
+          <pv_name>$(Sys)$(Dev)Model-I</pv_name>
           <background_color>
-            <color red="255" green="255" blue="255" />
+            <color red="240" green="240" blue="240" />
           </background_color>
           <foreground_color>
             <color red="0" green="0" blue="0" />
@@ -1389,7 +1250,7 @@ $(pv_value)</tooltip>
           <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
           <precision>0</precision>
           <font>
-            <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+            <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
           </font>
           <width>180</width>
           <border_style>0</border_style>
@@ -1428,12 +1289,12 @@ $(pv_value)</tooltip>
           <color red="192" green="192" blue="192" />
         </foreground_color>
         <background_color>
-          <color red="255" green="255" blue="255" />
+          <color red="240" green="240" blue="240" />
         </background_color>
         <enabled>true</enabled>
         <widget_type>Grouping Container</widget_type>
         <font>
-          <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+          <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
         </font>
         <width>541</width>
         <border_style>0</border_style>
@@ -1454,7 +1315,7 @@ $(pv_value)</tooltip>
           <wuid>7c32a782:1416f6861e0:13b5</wuid>
           <auto_size>true</auto_size>
           <scripts />
-          <height>17</height>
+          <height>15</height>
           <name>Label_1</name>
           <scale_options>
             <width_scalable>true</width_scalable>
@@ -1463,7 +1324,7 @@ $(pv_value)</tooltip>
           </scale_options>
           <transparent>true</transparent>
           <background_color>
-            <color red="255" green="255" blue="255" />
+            <color red="240" green="240" blue="240" />
           </background_color>
           <foreground_color>
             <color red="0" green="0" blue="0" />
@@ -1472,9 +1333,9 @@ $(pv_value)</tooltip>
           <enabled>true</enabled>
           <text>Firmware revision</text>
           <font>
-            <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+            <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
           </font>
-          <width>109</width>
+          <width>93</width>
           <border_style>0</border_style>
           <rules />
           <border_width>1</border_width>
@@ -1508,9 +1369,9 @@ $(pv_value)</tooltip>
           <format_type>0</format_type>
           <precision_from_pv>true</precision_from_pv>
           <transparent>true</transparent>
-          <pv_name>$(P)FIRMWARE</pv_name>
+          <pv_name>$(Sys)$(Dev)Firmware-I</pv_name>
           <background_color>
-            <color red="255" green="255" blue="255" />
+            <color red="240" green="240" blue="240" />
           </background_color>
           <foreground_color>
             <color red="0" green="0" blue="0" />
@@ -1521,7 +1382,7 @@ $(pv_value)</tooltip>
           <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
           <precision>0</precision>
           <font>
-            <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+            <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
           </font>
           <width>180</width>
           <border_style>0</border_style>
@@ -1560,12 +1421,12 @@ $(pv_value)</tooltip>
           <color red="192" green="192" blue="192" />
         </foreground_color>
         <background_color>
-          <color red="255" green="255" blue="255" />
+          <color red="240" green="240" blue="240" />
         </background_color>
         <enabled>true</enabled>
         <widget_type>Grouping Container</widget_type>
         <font>
-          <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+          <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
         </font>
         <width>541</width>
         <border_style>0</border_style>
@@ -1586,7 +1447,7 @@ $(pv_value)</tooltip>
           <wuid>7c32a782:1416f6861e0:13b5</wuid>
           <auto_size>true</auto_size>
           <scripts />
-          <height>17</height>
+          <height>15</height>
           <name>Label_1</name>
           <scale_options>
             <width_scalable>true</width_scalable>
@@ -1595,7 +1456,7 @@ $(pv_value)</tooltip>
           </scale_options>
           <transparent>true</transparent>
           <background_color>
-            <color red="255" green="255" blue="255" />
+            <color red="240" green="240" blue="240" />
           </background_color>
           <foreground_color>
             <color red="0" green="0" blue="0" />
@@ -1604,9 +1465,9 @@ $(pv_value)</tooltip>
           <enabled>true</enabled>
           <text>Serial number</text>
           <font>
-            <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+            <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
           </font>
-          <width>90</width>
+          <width>73</width>
           <border_style>0</border_style>
           <rules />
           <border_width>1</border_width>
@@ -1640,9 +1501,9 @@ $(pv_value)</tooltip>
           <format_type>0</format_type>
           <precision_from_pv>true</precision_from_pv>
           <transparent>true</transparent>
-          <pv_name>$(P)SERIAL</pv_name>
+          <pv_name>$(Sys)$(Dev)Serial-I</pv_name>
           <background_color>
-            <color red="255" green="255" blue="255" />
+            <color red="240" green="240" blue="240" />
           </background_color>
           <foreground_color>
             <color red="0" green="0" blue="0" />
@@ -1653,7 +1514,7 @@ $(pv_value)</tooltip>
           <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
           <precision>0</precision>
           <font>
-            <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+            <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
           </font>
           <width>180</width>
           <border_style>0</border_style>
@@ -1699,9 +1560,9 @@ $(pv_value)</tooltip>
     <enabled>true</enabled>
     <widget_type>Grouping Container</widget_type>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
     </font>
-    <width>584</width>
+    <width>673</width>
     <border_style>0</border_style>
     <rules />
     <fc>false</fc>
@@ -1739,7 +1600,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <widget_type>Grouping Container</widget_type>
       <font>
-        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
       </font>
       <width>541</width>
       <border_style>0</border_style>
@@ -1760,7 +1621,7 @@ $(pv_value)</tooltip>
         <wuid>4e624333:1420f1fd232:-63e8</wuid>
         <auto_size>true</auto_size>
         <scripts />
-        <height>17</height>
+        <height>15</height>
         <name>Label_1</name>
         <scale_options>
           <width_scalable>true</width_scalable>
@@ -1778,9 +1639,9 @@ $(pv_value)</tooltip>
         <enabled>true</enabled>
         <text>Last error</text>
         <font>
-          <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+          <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
         </font>
-        <width>61</width>
+        <width>49</width>
         <border_style>0</border_style>
         <rules />
         <border_width>1</border_width>
@@ -1814,7 +1675,7 @@ $(pv_value)</tooltip>
         <format_type>0</format_type>
         <precision_from_pv>true</precision_from_pv>
         <transparent>true</transparent>
-        <pv_name>$(P)ERROR_CODE</pv_name>
+        <pv_name>$(Sys)$(Dev)ErrCode-Sts</pv_name>
         <background_color>
           <color red="255" green="255" blue="255" />
         </background_color>
@@ -1827,7 +1688,7 @@ $(pv_value)</tooltip>
         <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <precision>0</precision>
         <font>
-          <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+          <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
         </font>
         <width>54</width>
         <border_style>0</border_style>
@@ -1848,7 +1709,7 @@ $(pv_value)</tooltip>
       <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
         <border_alarm_sensitive>true</border_alarm_sensitive>
         <visible>true</visible>
-        <vertical_alignment>1</vertical_alignment>
+        <vertical_alignment>0</vertical_alignment>
         <show_units>true</show_units>
         <wuid>4e624333:1420f1fd232:-63e7</wuid>
         <auto_size>false</auto_size>
@@ -1865,7 +1726,7 @@ $(pv_value)</tooltip>
         <format_type>0</format_type>
         <precision_from_pv>true</precision_from_pv>
         <transparent>true</transparent>
-        <pv_name>$(P)ERROR_DESC</pv_name>
+        <pv_name>$(Sys)$(Dev)ErrDesc-Sts</pv_name>
         <background_color>
           <color red="255" green="255" blue="255" />
         </background_color>
@@ -1878,9 +1739,9 @@ $(pv_value)</tooltip>
         <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <precision>0</precision>
         <font>
-          <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+          <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
         </font>
-        <width>180</width>
+        <width>229</width>
         <border_style>0</border_style>
         <rules />
         <pv_value />
@@ -1922,7 +1783,7 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <widget_type>Grouping Container</widget_type>
       <font>
-        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
       </font>
       <width>541</width>
       <border_style>0</border_style>
@@ -1943,7 +1804,7 @@ $(pv_value)</tooltip>
         <wuid>4e624333:1420f1fd232:-63e4</wuid>
         <auto_size>true</auto_size>
         <scripts />
-        <height>17</height>
+        <height>15</height>
         <name>Label_1</name>
         <scale_options>
           <width_scalable>true</width_scalable>
@@ -1961,9 +1822,9 @@ $(pv_value)</tooltip>
         <enabled>true</enabled>
         <text>Unacknowledged errors</text>
         <font>
-          <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+          <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
         </font>
-        <width>149</width>
+        <width>125</width>
         <border_style>0</border_style>
         <rules />
         <border_width>1</border_width>
@@ -1997,7 +1858,7 @@ $(pv_value)</tooltip>
         <format_type>0</format_type>
         <precision_from_pv>true</precision_from_pv>
         <transparent>true</transparent>
-        <pv_name>$(P)ERR_COUNT_IN</pv_name>
+        <pv_name>$(Sys)$(Dev)ErrCount-I</pv_name>
         <background_color>
           <color red="255" green="255" blue="255" />
         </background_color>
@@ -2010,7 +1871,7 @@ $(pv_value)</tooltip>
         <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
         <precision>0</precision>
         <font>
-          <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+          <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
         </font>
         <width>180</width>
         <border_style>0</border_style>
@@ -2050,7 +1911,7 @@ $(pv_value)</tooltip>
         <enabled>true</enabled>
         <text>OK</text>
         <font>
-          <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+          <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
         </font>
         <width>55</width>
         <border_style>0</border_style>
@@ -2066,7 +1927,7 @@ $(pv_value)</tooltip>
         <y>1</y>
         <actions hook="false" hook_all="false">
           <action type="WRITE_PV">
-            <pv_name>$(P)ACK_ERR</pv_name>
+            <pv_name>$(Sys)$(Dev)Cmd:AckErr</pv_name>
             <value>1</value>
             <timeout>10</timeout>
             <confirm_message></confirm_message>
@@ -2104,7 +1965,7 @@ $(pv_value)</tooltip>
     <enabled>true</enabled>
     <widget_type>Grouping Container</widget_type>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
     </font>
     <width>552</width>
     <border_style>0</border_style>
@@ -2125,7 +1986,7 @@ $(pv_value)</tooltip>
       <wuid>4e624333:1420f1fd232:-5d8f</wuid>
       <auto_size>true</auto_size>
       <scripts />
-      <height>17</height>
+      <height>15</height>
       <name>Label_2</name>
       <scale_options>
         <width_scalable>true</width_scalable>
@@ -2143,9 +2004,9 @@ $(pv_value)</tooltip>
       <enabled>true</enabled>
       <text>Comm timeout</text>
       <font>
-        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
       </font>
-      <width>97</width>
+      <width>82</width>
       <border_style>0</border_style>
       <rules />
       <border_width>1</border_width>
@@ -2179,7 +2040,7 @@ $(pv_value)</tooltip>
       <format_type>0</format_type>
       <precision_from_pv>true</precision_from_pv>
       <transparent>true</transparent>
-      <pv_name>$(P)TIMEOUT_IN</pv_name>
+      <pv_name>$(Sys)$(Dev)Timeout-I</pv_name>
       <background_color>
         <color red="255" green="255" blue="255" />
       </background_color>
@@ -2192,7 +2053,7 @@ $(pv_value)</tooltip>
       <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
       <precision>0</precision>
       <font>
-        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
       </font>
       <width>180</width>
       <border_style>0</border_style>
@@ -2226,14 +2087,14 @@ $(pv_value)</tooltip>
       <widget_type>Text Input</widget_type>
       <text></text>
       <font>
-        <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+        <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
       </font>
       <width>136</width>
       <border_style>3</border_style>
       <pv_value />
-      <maximum>Infinity</maximum>
+      <maximum>1.7976931348623157E308</maximum>
       <border_width>1</border_width>
-      <minimum>-Infinity</minimum>
+      <minimum>-1.7976931348623157E308</minimum>
       <show_units>true</show_units>
       <wuid>4e624333:1420f1fd232:-5d8d</wuid>
       <rotation_angle>0.0</rotation_angle>
@@ -2247,7 +2108,7 @@ $(pv_value)</tooltip>
       </scale_options>
       <selector_type>0</selector_type>
       <transparent>false</transparent>
-      <pv_name>$(P)TIMEOUT_OUT</pv_name>
+      <pv_name>$(Sys)$(Dev)Timeout-SP</pv_name>
       <foreground_color>
         <color red="0" green="0" blue="0" />
       </foreground_color>
@@ -2289,7 +2150,7 @@ $(pv_value)</tooltip>
     <enabled>true</enabled>
     <text>Save state to flash</text>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
     </font>
     <width>162</width>
     <border_style>0</border_style>
@@ -2305,7 +2166,7 @@ $(pv_value)</tooltip>
     <y>78</y>
     <actions hook="false" hook_all="false">
       <action type="WRITE_PV">
-        <pv_name>$(P)EXECUTE_SAVE</pv_name>
+        <pv_name>$(Sys)$(Dev)Cmd:Save</pv_name>
         <value>1</value>
         <timeout>10</timeout>
         <confirm_message></confirm_message>
@@ -2338,7 +2199,7 @@ $(pv_value)</tooltip>
     <enabled>true</enabled>
     <text>Reset device</text>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
     </font>
     <width>162</width>
     <border_style>0</border_style>
@@ -2354,7 +2215,7 @@ $(pv_value)</tooltip>
     <y>48</y>
     <actions hook="false" hook_all="false">
       <action type="WRITE_PV">
-        <pv_name>$(P)EXECUTE_RESET</pv_name>
+        <pv_name>$(Sys)$(Dev)Cmd:Reset</pv_name>
         <value>1</value>
         <timeout>10</timeout>
         <confirm_message></confirm_message>
@@ -2387,7 +2248,7 @@ $(pv_value)</tooltip>
     <enabled>true</enabled>
     <text>Recall state from flash</text>
     <font>
-      <opifont.name fontName="Sans" height="10" style="0">Default</opifont.name>
+      <opifont.name fontName="Segoe UI" height="9" style="0">Default</opifont.name>
     </font>
     <width>162</width>
     <border_style>0</border_style>
@@ -2403,7 +2264,7 @@ $(pv_value)</tooltip>
     <y>108</y>
     <actions hook="false" hook_all="false">
       <action type="WRITE_PV">
-        <pv_name>$(P)EXECUTE_RECALL</pv_name>
+        <pv_name>$(Sys)$(Dev)Cmd:Recall</pv_name>
         <value>1</value>
         <timeout>10</timeout>
         <confirm_message></confirm_message>
@@ -2413,5 +2274,46 @@ $(pv_value)</tooltip>
     <tooltip>$(pv_name)
 $(pv_value)</tooltip>
     <x>631</x>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <visible>true</visible>
+    <vertical_alignment>1</vertical_alignment>
+    <wuid>7fb27f07:1493e5732cd:-5dcc</wuid>
+    <auto_size>false</auto_size>
+    <scripts />
+    <height>29</height>
+    <name>title</name>
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <transparent>false</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <background_color>
+      <color red="0" green="0" blue="255" />
+    </background_color>
+    <foreground_color>
+      <color name="Gray_0" red="255" green="255" blue="255" />
+    </foreground_color>
+    <widget_type>Label</widget_type>
+    <enabled>true</enabled>
+    <text>F460 Configuration [$(Sys)$(Dev)]</text>
+    <font>
+      <fontdata fontName="Sans" height="18" style="0" />
+    </font>
+    <width>800</width>
+    <border_style>0</border_style>
+    <rules />
+    <border_width>1</border_width>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <actions hook="false" hook_all="false" />
+    <y>0</y>
+    <wrap_words>true</wrap_words>
+    <tooltip></tooltip>
+    <x>0</x>
   </widget>
 </display>
