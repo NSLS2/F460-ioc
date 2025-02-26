@@ -25,6 +25,7 @@ ${PROD_IOC}_DBD += sscan.dbd
 ${PROD_IOC}_DBD += calcSupport.dbd
 ${PROD_IOC}_DBD += calc.dbd
 ${PROD_IOC}_DBD += asSupport.dbd
+${PROD_IOC}_DBD += devIocStats.dbd
 ${PROD_IOC}_DBD += busySupport.dbd
 ${PROD_IOC}_DBD += stream.dbd
 ${PROD_IOC}_DBD += asyn.dbd
@@ -41,6 +42,7 @@ ${PROD_IOC}_DBD += calcoutRecord.dbd
 # Add all the support libraries needed by this IOC
 #${PROD_IOC}_LIBS += xxx
 ${PROD_IOC}_LIBS += autosave
+${PROD_IOC}_LIBS += devIocStats
 ${PROD_IOC}_LIBS += calc
 ${PROD_IOC}_LIBS += seq pv
 ${PROD_IOC}_LIBS += sscan busy
