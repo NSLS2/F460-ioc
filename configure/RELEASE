@@ -41,6 +41,8 @@ ASYN=/usr/lib/epics
 #STREAM=/opt/epics/modules/stream
 #UIOCSYSTEM=/opt/epics/modules/uIOCSystem
 GENERICSCAN=/usr/lib/epics
+AUTOSAVE=/usr/lib/epics
+DEVIOCSTATS=/usr/lib/epics
 # BEGIN ANSIBLE MANAGED BLOCK
 # RecSync support
 RECCASTER=$(EPICS_BASE)
