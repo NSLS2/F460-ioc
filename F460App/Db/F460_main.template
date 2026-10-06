@@ -488,25 +488,25 @@ record(ai, "$(Sys)$(Dev)Sen:Per") {
 
 record(ai, "$(Sys)$(Dev)Sen:I0-I") {
   field(DESC, "Sensor input 0")
-  field(EGU, "V")
+  field(EGU, "A")
   field(PREC, "$(PREC)")
   #field(TPRO, 1)
 }
 
 record(ai, "$(Sys)$(Dev)Sen:I1-I") {
   field(DESC, "Sensor input 1")
-  field(EGU, "V")
+  field(EGU, "A")
   field(PREC, "$(PREC)")
 }
 record(ai, "$(Sys)$(Dev)Sen:I2-I") {
   field(DESC, "Sensor input 2")
-  field(EGU, "V")
+  field(EGU, "A")
   field(PREC, "$(PREC)")
 }
 
 record(ai, "$(Sys)$(Dev)Sen:I3-I") {
   field(DESC, "Sensor input 3")
-  field(EGU, "V")
+  field(EGU, "A")
   field(PREC, "$(PREC)")
 }
 
@@ -535,7 +535,7 @@ record(compress, "$(Sys)$(Dev)Sen:BPer-I") {
 
 record(compress, "$(Sys)$(Dev)Sen:BI0-I") {
   field(DESC, "Sensor input 0 buffer")
-  field(EGU, "V")
+  field(EGU, "A")
 
   field(ALG, "Circular Buffer")
   field(INP, "$(Sys)$(Dev)Sen:I0-I.VAL NPP")
@@ -546,7 +546,7 @@ record(compress, "$(Sys)$(Dev)Sen:BI0-I") {
 
 record(compress, "$(Sys)$(Dev)Sen:BI1-I") {
   field(DESC, "Sensor input 1 buffer")
-  field(EGU, "V")
+  field(EGU, "A")
 
   field(ALG, "Circular Buffer")
   field(INP, "$(Sys)$(Dev)Sen:I1-I.VAL NPP")
@@ -556,7 +556,7 @@ record(compress, "$(Sys)$(Dev)Sen:BI1-I") {
 }
 record(compress, "$(Sys)$(Dev)Sen:BI2-I") {
   field(DESC, "Sensor input 2 buffer")
-  field(EGU, "V")
+  field(EGU, "A")
 
   field(ALG, "Circular Buffer")
   field(INP, "$(Sys)$(Dev)Sen:I2-I.VAL NPP")
@@ -566,7 +566,7 @@ record(compress, "$(Sys)$(Dev)Sen:BI2-I") {
 }
 record(compress, "$(Sys)$(Dev)Sen:BI3-I") {
   field(DESC, "Sensor input 3 buffer")
-  field(EGU, "V")
+  field(EGU, "A")
 
   field(ALG, "Circular Buffer")
   field(INP, "$(Sys)$(Dev)Sen:I3-I.VAL NPP")
